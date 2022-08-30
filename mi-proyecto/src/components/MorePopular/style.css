@@ -1,0 +1,29 @@
+.card-container{
+    color: rgb(219, 214, 214);
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 24%;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+}
+.photo-container img{
+    max-width: 250px; 
+    margin: 20px; 
+    border-radius: 5px;  
+}
+.card-container:hover,
+.active{
+box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+}
+.card-container p {
+    margin: 3px 0;
+}
+.card-container h3 {
+    margin: 2px 0;
+}
+.more{
+    color: blue;
+    text-align: right;
+}
