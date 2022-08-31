@@ -10,11 +10,10 @@ li {
 }
 a {
     text-decoration: none;
-    color: #000;
 }
 body {
     background-image: linear-gradient(rgb(31, 31, 73), rgb(11, 6, 24), rgb(31, 31, 73));
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;    
 }
 
 /* HEADER*/ 
@@ -25,12 +24,12 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 20px;    
-    text-align: center;
-    background-color: black;
-    
+    text-align: center;   
+    border-bottom: rgb(77, 76, 76);     
 }
 .logo {
     align-items: flex-start;
+    
 }
 nav ul {
     display: flex;
@@ -38,13 +37,12 @@ nav ul {
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0 20px;
-    
+    padding: 0 20px;    
     text-align: center;
     
 }
-nav img{
-    max-width: 50px;
+nav img {
+    max-width: 100px;
 }
 nav ul li {
     margin: 0 10px;
@@ -56,19 +54,41 @@ nav ul li {
 nav ul li a {
     color: white;
 }
-nav ul li:first-child {
-    font-weight: bold;
-}
-
 h1, h2 {
     color: white;
 }
+.main-home h2 {
+    font-size: 50px;
+    margin: 5% ;
+}
+
+.view-all{
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    border-radius: 30px;
+    border-color: 0px;
+    padding: 10px;
+    background-color: rgba(240, 255, 255, 0.767);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    align-self: center;   
+    margin-left: 45%;
+
+}
+.view-all:hover,
+.active{
+box-shadow: 0rem 0rem 10px 8px rgba(136, 138, 155, 0.25);
+}
+
+
 
 
 /*FOOTER */
 
 footer {
-    background-color: black;
+    border-top: rgb(77, 76, 76);
     text-align: center;
     padding: 20px 0;
     color: #666; 

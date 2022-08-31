@@ -2,12 +2,10 @@ import React from "react";
 
 function NotFound() {
 
-    return (
-
-        <React.Fragment>
-            <h1>No se encontró la página solicitada</h1>
-        </React.Fragment>
-
+    return (        
+            <section className="notFound-container"> 
+                <img src="./img/notfound.jpg" alt= "404 not found" className="notFound"/>
+            </section>                  
     );
     
 }
