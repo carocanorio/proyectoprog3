@@ -51,7 +51,7 @@ class Home extends Component {
 
                 <main className='main-home'>   
 
-                              <Form buscar={(buscado) => this.searchResult(buscado)}/>
+                     <Form buscar={(buscado) => this.searchResult(buscado)}/>
 
                         <h2>Billboard</h2>
                         <section className="billboard">

@@ -3,13 +3,13 @@
     font-size: 15px;
     padding: 10px;
     margin-bottom: 20px;
-    width: 24%;
+    width: 18%;
     background-color: rgba(95, 93, 93, 0.616);
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
 }
 .card-container img{
-    max-width: 300px;   
+    max-width: 250px;   
     border-radius: 5px;
 }
 .card-container:hover,
