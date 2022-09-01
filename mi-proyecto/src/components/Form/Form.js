@@ -13,7 +13,7 @@ class Form extends Component{
 
     evitarSubmit(event) {
         event.preventDefault();
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&query=${this.state.textSearch}&page=1&include_adult=false`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&query=${this.state.textSearch}&page=1&include_adult=false`)
             .then( res => res.json())
             .then( data => this.setState({
                 movies: data.results                             

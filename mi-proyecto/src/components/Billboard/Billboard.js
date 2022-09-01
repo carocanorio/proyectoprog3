@@ -8,10 +8,15 @@ class Billboard extends Component{
     constructor(props){
         super(props);
         this.state = {
-            
+            viewMore: false
         }
     };
-    
+    show(){
+        this.setState( {viewMore: true} )
+    }
+    hide(){
+        this.setState({viewMore: false} )
+    }
 
     render(){
         return(
@@ -24,10 +29,15 @@ class Billboard extends Component{
                   
                     <h3>{ this.props.data.title}</h3> 
                     <p>Release date: {this.props.data.release_date}</p>
-                    <p className='more'>View more</p> 
-                    <section className='extra'>
-                        <p>Description: {this.props.data.overview}</p> 
-                    </section>
+                    {this.state.viewMore ? 
+                        <section className='extra'>                            
+                            <p>Description: {this.props.data.overview}</p> 
+                            <p className='more' onClick={() => this.hide()}>View less</p>
+                        </section>
+                        :                                                 
+                        <p className='more' onClick={() => this.show()}>View more</p>                         
+                        
+                    } 
                     <div>
                         <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
                         <p className='favorite'><span class="material-symbols-outlined">heart_plus </span></p>  

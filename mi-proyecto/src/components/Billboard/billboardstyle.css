@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    justify-content: space-between;
     color: rgb(231, 228, 228);
     font-size: 20px;
     padding: 10px;
@@ -30,6 +31,10 @@ box-shadow: 0rem 0rem 10px 8px rgba(95, 97, 112, 0.25);
     text-align: right;
     font-weight: bold;
 }
+.more:hover,
+.active{
+    box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+}
 .card-container div {
     display: flex;
     flex-wrap: wrap;
@@ -55,6 +60,26 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 
 
+/*Media queries*/
+/*Tablets*/
+@media (max-width: 768px){
 
+    .card-container {
+        font-size: 15px;
+        width: 250px;
+    }
+    .card-container img {
+        max-width: 200px;
+    }
 
+}    
 
+/*Mobile*/
+@media (max-width: 420px){ 
+    .card-container {
+        font-size: 15px;
+        width: 100%;
+    }
+    
+
+}
