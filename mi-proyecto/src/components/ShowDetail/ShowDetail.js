@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './ShowDetailStyle.css'
 import {Link} from 'react-router-dom';
+//import loadingGif from "../../loadingGif.gif";
+// <img src={loadingGif} alt="wait until the page loads" /> 
 
 class ShowDetail extends Component{
 

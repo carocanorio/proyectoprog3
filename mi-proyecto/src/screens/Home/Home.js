@@ -3,6 +3,7 @@ import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
 import SearchResults from '../../components/SearchResults/SearchResults';
+import loadingGif from "../../loadingGif.gif";
 
 
 class Home extends Component {
@@ -57,27 +58,42 @@ class Home extends Component {
                      {this.state.SearchResults === '' ? 
                         <p className='more'>Sorry, we couldn't find any results</p>
                         :                                                                                      
-                         <section className='SearchResults-container'>                       
-                          { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }
+                         <section className='SearchResults-container'> 
+                         {this.state.dataSearchResults.length === 0 ?
+                            <img src={loadingGif} alt="wait until the page loads" /> :
+                            <>
+                                { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }
+                            </>
+
+                         }                      
                             
                         </section>
                     } 
 
                         <h2>Billboard</h2>
                         <section className="billboard">
-                            {
-                                this.state.dataBillboard.map((oneMovie) => <Billboard key={oneMovie.id} data={oneMovie}/>)
+                            {this.state.dataBillboard.length === 0 ? 
+                                <img src={loadingGif} alt="wait until the page loads" /> :
+                                <>
+                                    {
+                                        this.state.dataBillboard.map((oneMovie) => <Billboard key={oneMovie.id} data={oneMovie}/>)
+                                    }
+                                    <p className='view-all'>View all</p>
+                                </>
                             }
-
-                            <p className='view-all'>View all</p>
                         </section>
 
                         <h2>More popular</h2>
                         <section className="morePopular">
-                            {
-                                this.state.dataPopular.map((oneMoviePopular) => <MorePopular key={oneMoviePopular.id} data={oneMoviePopular}/>)
+                            {this.state.dataPopular.length === 0?
+                            <img src={loadingGif} alt="wait until the page loads" /> :
+                            <>
+                                {
+                                    this.state.dataPopular.map((oneMoviePopular) => <MorePopular key={oneMoviePopular.id} data={oneMoviePopular}/>)
+                                }
+                                <p className='view-all'>View all</p>
+                            </>
                             }
-                            <p className='view-all'>View all</p>
                         </section>
                 </main>                    
 
