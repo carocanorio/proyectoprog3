@@ -59,13 +59,7 @@ class Home extends Component {
                         <p className='more'>Sorry, we couldn't find any results</p>
                         :                                                                                      
                          <section className='SearchResults-container'> 
-                         {this.state.dataSearchResults.length === 0 ?
-                            <img src={loadingGif} alt="wait until the page loads" /> :
-                            <>
-                                { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }
-                            </>
-
-                         }                      
+                                { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }                    
                             
                         </section>
                     } 
