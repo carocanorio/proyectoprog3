@@ -39,7 +39,7 @@ class MorePopular extends Component{
                     } 
                     <div>
                         <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
-                        <p className='favorite'><span class="material-symbols-outlined">heart_plus </span></p>  
+                        <p className='favourites'><span class="material-symbols-outlined">heart_plus </span></p>  
                     </div>
                                                                  
                     

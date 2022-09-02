@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './billboardstyle.css'
+import './SearchResultsStyle.css'
 
 
-class Billboard extends Component{
+class SearchResults extends Component{
 
     constructor(props){
         super(props);
@@ -21,14 +21,13 @@ class Billboard extends Component{
     render(){
         return(
             <React.Fragment>
-                <article className='card-container'>                            
-                                            
+            <article className='card-container'>                            
+                                          
                     <Link to={`/movies/id/${this.props.data.id}`}> 
-                    <img src= {`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel película"/>
-                    </Link>
-                  
+                    <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel película"/>
+                    </Link>                    
                     <h3>{ this.props.data.title}</h3> 
-                    <p>Release date: {this.props.data.release_date}</p>
+                    <p>Release date: {this.props.data.release_date}</p>                    
                     {this.state.viewMore ? 
                         <section className='extra'>                            
                             <p>Description: {this.props.data.overview}</p> 
@@ -38,16 +37,17 @@ class Billboard extends Component{
                         <p className='more' onClick={() => this.show()}>View more</p>                         
                         
                     } 
-                    <div className='go-to-detail-container'>
+                    <div>
                         <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
                         <p className='favourites'><span class="material-symbols-outlined">heart_plus </span></p>  
-                    </div>                                              
+                    </div>
+                                                                 
                     
                 </article>
 
-            </React.Fragment>
+        </React.Fragment>
         )
     }
 }
 
-export default Billboard ;
+export default SearchResults;
