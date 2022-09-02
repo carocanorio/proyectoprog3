@@ -12,10 +12,10 @@ function Header (){
                     <Link to='/'> Home</Link>
                 </li>
                 <li> 
-                    <Link to='/Favorites'>Favoritos</Link>
+                    <Link to='/Favourites'>Favourites</Link>
                 </li>
                 <li> 
-                    <Link to='/All'>Ver todas</Link>
+                    <Link to='/All'>View all</Link>
                 </li>
             </ul>
         </nav>

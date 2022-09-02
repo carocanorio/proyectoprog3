@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
+import SearchResults from '../../components/SearchResults/SearchResults';
 
 
 class Home extends Component {
@@ -11,6 +12,7 @@ class Home extends Component {
         this.state = {
             dataBillboard: [],
             dataPopular: [],
+            dataSearchResults: [],
             valueSearch:''
         }
     };
@@ -34,14 +36,14 @@ class Home extends Component {
     filterMovie() {
         let textToFilter = this.state.valueSearch.toLowerCase();
   
-        let MovieName = this.state.dataBillboard;
+        let MovieName = this.state.dataSearchResults;
         this.setState({
-          dataBillboard: MovieName.filter((Movie) => Movie.title.toLowerCase().includes(textToFilter) )})
+          dataSearchResults: MovieName.filter((Movie) => Movie.title.toLowerCase().includes(textToFilter) )})
       }; 
     
     searchResult(buscado){
         this.setState({
-            dataBillboard: buscado, 
+            dataSearchResults: buscado, 
         })
       }
 
@@ -51,6 +53,15 @@ class Home extends Component {
                 <main className='main-home'>   
 
                      <Form buscar={(buscado) => this.searchResult(buscado)}/>
+
+                     {this.state.SearchResults === '' ? 
+                        <p className='more'>Sorry, we couldn't find any results</p>
+                        :                                                                                      
+                         <section className='SearchResults-container'>                       
+                          { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }
+                            
+                        </section>
+                    } 
 
                         <h2>Billboard</h2>
                         <section className="billboard">

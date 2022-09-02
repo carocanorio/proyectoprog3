@@ -9,7 +9,7 @@
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
 }
 .card-container img{
-    max-width: 250px;   
+    max-width: 200px;   
     border-radius: 5px;
 }
 .card-container:hover,
@@ -17,16 +17,18 @@
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .card-container p {
-    margin: 3px 0;
+    margin: 6px;
 }
 .card-container h3 {
-    margin: 2px 0;
+    margin: 10px;
 }
 .more{
     color: rgb(2, 2, 138);
     text-align: right;
     font-weight: bold;
+    margin: 5px;
 }
+
 .card-container div {
     display: flex;
     flex-wrap: wrap;
@@ -47,25 +49,25 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 
 }
 
-.go-to-detail:hover,
-.active{
-box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
-}
 
 /*Media queries*/
 /*Tablets*/
 @media (max-width: 768px){
 
     .card-container {      
-        width:90%;
-    }        
+        width:60%;
+    }   
+       
 }    
 
 /*Mobile*/
 @media (max-width: 420px){ 
     .card-container {
         font-size: 15px;
-        width: 90%;
-    }    
+        width: 80%;
+    } 
+    .card-container img{
+        max-width: 200px;   
+    }   
 
 }
