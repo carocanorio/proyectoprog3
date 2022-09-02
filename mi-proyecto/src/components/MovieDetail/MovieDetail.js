@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './MovieDetailStyle.css'
+import './MovieDetailStyle.css';
+import {Link} from 'react-router-dom';
+
 class MovieDetail extends Component{
 
     constructor(props){
@@ -15,7 +17,9 @@ class MovieDetail extends Component{
         .then( response => response.json() )
         .then( data => this.setState({
             movieInformation: data
-        }))
+            },
+            () => console.log(data)
+            ))
         .catch( error =>	console.log('El error fue: ' + error))
 
     }
@@ -37,6 +41,7 @@ link o botón agregar a “favoritos”.*/
                         this.state.movieInformation.genres.map((oneGenre, i ) => <li key={oneGenre + i}>{oneGenre.name}</li>)
                     }
                 </ul>
+                <p className='favorite'> <Link to=''>Add to favourites<span class="material-symbols-outlined">heart_plus </span></Link></p> 
 
             </article>
         )
