@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './MovieDetailStyle.css';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 //import loadingGif from "../../loadingGif.gif";
 // <img src={loadingGif} alt="wait until the page loads" /> 
 class MovieDetail extends Component{
@@ -9,7 +9,9 @@ class MovieDetail extends Component{
         super();
         this.state = {
             id: Number(props.match.params.id),
-            movieInformation: {}
+            movieInformation: {},
+            favsText: 'Add to favourites',
+            inFavs: false
         }
     };
 
@@ -23,6 +25,58 @@ class MovieDetail extends Component{
             ))
         .catch( error =>	console.log('El error fue: ' + error))
 
+        let favourites = []
+        let recuperoStorage = localStorage.getItem('favourites')
+
+        if(recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage)
+            favourites = storageToArray
+
+            if(favourites.includes(this.state.movieInformation.id)) {
+                this.setState({
+                    favsText: 'Delete from favourites'
+                })
+            }
+
+
+        }
+
+
+
+    }
+
+    addAndDeleteFavourites(id) {
+        let favourites = []
+        let recuperoStorage = localStorage.getItem('favourites')
+
+        if(recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage)
+
+            favourites = storageToArray
+
+        }
+
+        if(favourites.includes(id)) {
+            favourites = favourites.filter(eachID => eachID !== id)
+            this.setState({
+                favsText: 'Add to favourites'
+            })
+        } else {
+            favourites.push(id)
+            this.setState({
+                favsText: 'Delete from favourites'
+            })
+        }
+
+
+
+        let favsToString = JSON.stringify(favourites)
+
+        localStorage.setItem('favourites', favsToString)
+
+        console.log(localStorage);
     }
 
 
@@ -54,12 +108,10 @@ class MovieDetail extends Component{
 
                         <hr className="line"></hr> 
 
-                        {
-                            this.state.movieInformation.genres.map((oneGenre, i ) => <li key={oneGenre + i}>{oneGenre.name}</li>)
-                        }
+
                         <hr className="line"></hr>
 
-                        <p className='favorite'> <Link to=''>Add to favourites<span class="material-symbols-outlined">heart_plus </span></Link></p> 
+                        <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 
                     </article>
                 </section>
             </>

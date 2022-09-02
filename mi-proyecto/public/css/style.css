@@ -129,6 +129,10 @@ footer {
     width: 100%;
 }
 
+.footerNames {
+    text-decoration: none;
+    color: #666; 
+}
 
 /*Media queries*/
 /*Tablets*/
