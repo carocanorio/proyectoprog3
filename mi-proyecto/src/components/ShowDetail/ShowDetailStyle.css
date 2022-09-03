@@ -1,55 +1,22 @@
-h3.detail-title{
-    font-size: 37px;
+.detail-title{
+    font-size: 50px;
     text-align: center;
-    border: solid white 1px;
     padding: 4px;
     color: white;
+    border: 0
 }
 
-p.detail-info  {
+.detail-info  {
     text-decoration: none;
     color: white;
 }
 
-section.movie-series-detail {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 6px;
-}
-
-section.movie-series-detail article {
-    width: 95vw;
-    margin: 5px;
-    padding: 5px;
-}
-
-section.movie-series-detail article.photo-container img{
-    width: 100%;
-    height: 80vh;
-}
-section.movie-series-detail article.data {
-    width: 100%;
-    padding: 15px;
-}
-section.movie-series-detail article.data h3 {
-    font-size: 30px;
-    text-align: center;
-}
-section.movie-series-detail article.data p {
-    font-size: 18px;
-    text-align: center;
-    justify-content: center;
-}
-
-section.favorite-container{
+.favorite-container{
     display: flex;
     justify-content: space-around;
 }
 
-p.favorite{
+.favorite{
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
@@ -62,20 +29,106 @@ p.favorite{
     font-weight: bold;
 }
 
+.movie-series-detail {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 95vw;
+    padding: 5px;
+    border-radius: 6px;
+    align-items: center;
+}
 
-hr.line {
-    color: white;
+.movie-series-detail .photo-container{
+    width: 30vw;
+    height: 70vh;
+    margin: 10px 10px 10px 40px;   
+    border-radius: 10px; 
+    padding: 0; 
+}
+
+.movie-series-detail .data{
+    width: 55vw;
+    padding: 0px 30px 0px 0px;
+    margin-bottom: 5%;
+
 }
 
 /*Media queries*/
 @media (max-width: 768px){
-    section.peliculasSeriesDetalle article.photo-container img{
+    section.movie-series-detail{
+        display: flex;
+        flex-wrap: wrap; 
+        margin: 0 auto;
+    }
+
+    .movie-series-detail article{
+        display: inline;
+        width: 95vw;
+        margin: 5px;
+        justify-content: center; 
+    }
+
+    .photo-container img{
         width: 100%;
-        height: 80vh;
+        margin-left: -25px;
+        margin-top: 95px;
+    }
+
+    .movie-series-detail .data{
+        width: 100%;
+    }
+
+    .data{
+        margin-top: -15px;
+    }
+
+    .detail-title{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .detail-info{
+        font-size: 15px;
+        text-align: center;
     }
 
     section.favorite-container{
         justify-content: space-around;
+        font-size: 15px;
 
     }
+}
+
+@media (max-width: 425px){
+
+    .main-title{
+        font-size: 50px;
+    }
+
+    .detail-title{
+        font-size: 40px ;
+        display: flex;
+        width: 100%;
+    }
+
+    .detail-info{
+        font-size: 15px;
+    }
+
+    .photo-container img{
+        display: flex;
+        width: 200%;
+        justify-content: space-around;
+        margin-left: 30px;
+    }
+
+    .movie-series-detail{
+        display: flex;
+    }
+    .data{
+        display: flex;
+        justify-content: space-around;
+    }
+
 }

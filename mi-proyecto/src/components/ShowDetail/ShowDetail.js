@@ -38,28 +38,15 @@ class ShowDetail extends Component{
                     </article>
                     
                     <article className='data'>
-                        <h3 className='detail-title'>{this.state.showInformation.name}</h3>
-
-                        <hr className="line"></hr>
+                        <h2 className='detail-title'>{this.state.showInformation.name}</h2>
 
                         <p className='detail-info'>Rating: {this.state.showInformation.popularity}</p>
 
-                        <hr className="line"></hr>
-
                         <p className='detail-info'>Aired from {this.state.showInformation.first_air_date} to {this.state.showInformation.last_air_date}</p>
 
-                        <hr className="line"></hr>
-
                         <p className='detail-info'>{this.state.showInformation.overview}</p>
-
-                        <hr className="line"></hr> 
-
                         
-                        {
-                            this.state.showInformation.genres.map((oneGenre, i ) => <li key={oneGenre + i}>{oneGenre.name}</li>)
-                        }
-
-                        <hr className="line"></hr>
+                      
 
                         <section className='favorite-container'>
                             <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 

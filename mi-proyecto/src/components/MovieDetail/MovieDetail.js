@@ -84,31 +84,20 @@ class MovieDetail extends Component{
         return(
             <>
                 <h1 className="main-title">Movie detail</h1>
-                <article className='photo-container'>
-                    <img src={`https://image.tmdb.org/t/p/w342/${this.state.movieInformation.poster_path}`} alt={this.state.movieInformation.title}/>
-                </article>
 
                 <section className='movie-series-detail'>
+                    <article className='photo-container'>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.movieInformation.poster_path}`} alt={this.state.movieInformation.title}/>
+                    </article>
                     
                     <article className='data'>
-                        <h3 className='detail-title'>{this.state.movieInformation.title}</h3>
-
-                        <hr className="line"></hr>
+                        <h2 className='detail-title'>{this.state.movieInformation.title}</h2>
 
                         <p className='detail-info'>Rating: {this.state.movieInformation.popularity}</p>
 
-                        <hr className="line"></hr>
-
                         <p className='detail-info'>Release date: {this.state.movieInformation.release_date}</p>
 
-                        <hr className="line"></hr>
-
                         <p className='detail-info'>{this.state.movieInformation.overview}</p>
-
-                        <hr className="line"></hr> 
-
-
-                        <hr className="line"></hr>
 
                         <section className='favorite-container'>
                             <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 
