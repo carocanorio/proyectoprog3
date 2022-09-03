@@ -14,7 +14,8 @@ class Home extends Component {
             dataBillboard: [],
             dataPopular: [],
             dataSearchResults: [],
-            valueSearch:''
+            valueSearch:'',
+            dataForFilter: []
         }
     };
 
@@ -22,7 +23,8 @@ class Home extends Component {
         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1')
             .then( res => res.json())
             .then( data => this.setState({
-                dataBillboard: data.results                              
+                dataBillboard: data.results,
+                dataForFilter: data.results,                              
             }))
             .catch()
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1') 
@@ -37,9 +39,9 @@ class Home extends Component {
     filterMovie() {
         let textToFilter = this.state.valueSearch.toLowerCase();
   
-        let MovieName = this.state.dataSearchResults;
+        let movieName = this.state.dataForFilter;
         this.setState({
-          dataSearchResults: MovieName.filter((Movie) => Movie.title.toLowerCase().includes(textToFilter) )})
+          dataSearchResults: movieName.filter((Movie) => Movie.title.toLowerCase().includes(textToFilter) )})
       }; 
     
     searchResult(buscado){
@@ -55,9 +57,8 @@ class Home extends Component {
 
                      <Form buscar={(buscado) => this.searchResult(buscado)}/>
 
-                     {this.state.SearchResults === '' ? 
-                        <p className='more'>Sorry, we couldn't find any results</p>
-                        :                                                                                      
+                     {this.state.dataSearchResults == null ? 
+                        <p >Sorry, we couldn't find any results</p> :                                                                                      
                          <section className='SearchResults-container'> 
                                 { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }                    
                             

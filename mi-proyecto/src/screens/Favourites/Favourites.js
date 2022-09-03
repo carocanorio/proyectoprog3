@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Favs from "../../components/Favs"
+import Favs from "../../components/Favs/Favs"
 
 class Favourites extends Component{
         

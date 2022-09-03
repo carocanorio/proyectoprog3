@@ -11,6 +11,24 @@ p.detail-info  {
     color: white;
 }
 
+section.favorite-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+p.favorite{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    border-radius: 25px;
+    border-color: 0px;
+    padding: 10px;
+    background-color: rgba(240, 255, 255, 0.767);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
 section.movie-series-detail {
     display: flex;
     flex-wrap: wrap; 
@@ -27,9 +45,17 @@ section.movie-series-detail article {
 }
 
 section.movie-series-detail article.photo-container img{
-    width: 100%;
-    height: 80vh;
+    width: 90%;
+    height: 90vh;
+    padding: 34px 34px 0px 34px;
 }
+
+article.photo-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+}
+
 section.movie-series-detail article.data {
     width: 100%;
     padding: 15px;
@@ -48,4 +74,15 @@ hr.line {
     color: white;
 }
 
+/*Media queries*/
+@media (max-width: 768px){
+    section.peliculasSeriesDetalle article.photo-container img{
+        width: 100%;
+        height: 80vh;
+    }
 
+    section.favorite-container{
+        justify-content: space-around;
+
+    }
+}
