@@ -46,16 +46,14 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
     text-align: center;
     color: black;
     font-weight: bold;
-
 }
 
 
 /*Media queries*/
 /*Tablets*/
 @media (max-width: 768px){
-
     .card-container {      
-        width:60%;
+        width: 48%;
     }   
        
 }    
