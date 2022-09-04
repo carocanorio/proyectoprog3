@@ -139,7 +139,8 @@ footer {
 
 .footerNames {
     text-decoration: none;
-    color: #666; 
+    color: #666;
+    font-size: 15px; 
 }
 
 /*Media queries*/
@@ -179,7 +180,7 @@ footer {
     }
 
     footer {
-        font-size: 15px;
+        font-size: 10px;
     }
 }    
 
@@ -229,7 +230,7 @@ footer {
     }
 
     footer {
-        font-size: 15px;
+        font-size: 10px;
     }
 
 }

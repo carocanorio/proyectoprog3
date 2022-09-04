@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ShowDetailStyle.css'
+import '../MovieDetail/MovieDetailStyle.css'
 //import loadingGif from "../../loadingGif.gif";
 // <img src={loadingGif} alt="wait until the page loads" /> 
 

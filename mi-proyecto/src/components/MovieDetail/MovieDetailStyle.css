@@ -82,17 +82,14 @@
     }
 
     .photo-container img{
-        width: 100%;
-        margin-left: -25px;
+        width: 150%;
         margin-top: 60px;
+        margin-left: 55%;
+        align-self: center;
     }
 
     .movie-series-detail .data{
         width: 100%;
-    }
-
-    .data{
-        margin-top: -10px;
     }
 
     .detail-title{
@@ -101,8 +98,9 @@
     }
 
     .detail-info{
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;
+        margin-left: 5%;
     }
 
     section.favorite-container{
@@ -119,7 +117,7 @@
     }
 
     .detail-title{
-        font-size: 40px ;
+        font-size: 35px ;
         display: flex;
         width: 100%;
     }
