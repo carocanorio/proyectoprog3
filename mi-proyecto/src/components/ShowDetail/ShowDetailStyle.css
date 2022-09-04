@@ -60,6 +60,7 @@
         display: flex;
         flex-wrap: wrap; 
         margin: 0 auto;
+        margin-top: -5%;
     }
 
     .movie-series-detail article{
@@ -72,7 +73,7 @@
     .photo-container img{
         width: 100%;
         margin-left: -25px;
-        margin-top: 95px;
+        margin-top: 70px;
     }
 
     .movie-series-detail .data{
@@ -84,7 +85,7 @@
     }
 
     .detail-title{
-        font-size: 20px;
+        font-size: 40px;
         text-align: center;
     }
 
