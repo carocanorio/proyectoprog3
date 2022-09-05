@@ -20,26 +20,33 @@ class Home extends Component {
     };
 
     componentDidMount(){
+
+        let resultBillboard = [];
+        let resultPopular = [];
+         
         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1')
             .then( res => res.json())
-            .then( data => this.setState({
-                dataBillboard: data.results,
-                dataForFilter: data.results,                              
-            }))
+            .then( data => resultBillboard = data.results)
+            .then(() => {
+                fetch('https://api.themoviedb.org/3/tv/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1') 
+                .then( res => res.json())
+                .then( data => resultPopular = data.results)
+                .then( () => this.setState({
+                    dataBillboard : resultBillboard,
+                    dataPopular: resultPopular
+                }))
+                .catch()
+            })
             .catch()
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1') 
-        .then( res => res.json())
-            .then( data => this.setState({
-                dataPopular: data.results                              
-            }))
-            .catch()
+
+
     }   
 
     // BUSCADOR
     filterMovie() {
         let textToFilter = this.state.valueSearch.toLowerCase();
   
-        let movieName = this.state.dataForFilter;
+        let movieName = this.state.dataSearchResults;
         this.setState({
           dataSearchResults: movieName.filter((Movie) => Movie.title.toLowerCase().includes(textToFilter) )})
       }; 
@@ -84,7 +91,7 @@ class Home extends Component {
                             <img src={loadingGif} alt="wait until the page loads" /> :
                             <>
                                 {
-                                    this.state.dataPopular.map((oneMoviePopular) => <MorePopular key={oneMoviePopular.id} data={oneMoviePopular}/>)
+                                    this.state.dataPopular.map((oneTvShowPopular) => <MorePopular key={oneTvShowPopular.id} data={oneTvShowPopular}/>)
                                 }
                                 <p className='view-all'>View all</p>
                             </>

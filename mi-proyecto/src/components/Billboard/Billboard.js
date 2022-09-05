@@ -31,7 +31,7 @@ class Billboard extends Component{
                     <p>Release date: {this.props.data.release_date}</p>
                     {this.state.viewMore ? 
                         <section className='extra'>                            
-                            <p>Description: {this.props.data.overview}</p> 
+                            <p>Overview: {this.props.data.overview}</p> 
                             <p className='more' onClick={() => this.hide()}>View less</p>
                         </section>
                         :                                                 

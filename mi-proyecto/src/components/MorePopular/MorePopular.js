@@ -24,13 +24,13 @@ class MorePopular extends Component{
             <article className='card-container'>                            
                                           
                     <Link to={`/movies/id/${this.props.data.id}`}> 
-                    <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel película"/>
+                    <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel serie"/>
                     </Link>                    
-                    <h3>{ this.props.data.title}</h3> 
-                    <p>Release date: {this.props.data.release_date}</p>                    
+                    <h3>{ this.props.data.name}</h3> 
+                    <p>First air date: {this.props.data.first_air_date}</p>                    
                     {this.state.viewMore ? 
                         <section className='extra'>                            
-                            <p>Description: {this.props.data.overview}</p> 
+                            <p>Overview: {this.props.data.overview}</p> 
                             <p className='more' onClick={() => this.hide()}>View less</p>
                         </section>
                         :                                                 

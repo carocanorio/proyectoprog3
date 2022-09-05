@@ -14,8 +14,14 @@ function Header (){
                 <li> 
                     <Link to='/Favourites'>Favourites</Link>
                 </li>
-                <li> 
-                    <Link to='/All'>View all</Link>
+                <li>                    
+                    <div className="dropdown">
+                        <p className="dropbtn">View all</p>                                                
+                        <div className="dropdown-content">
+                        <Link to='/All'>All billboard movies</Link>
+                        <Link to='/All'>All popular TV shows</Link>                            
+                        </div>
+                    </div>
                 </li>
             </ul>
         </nav>
