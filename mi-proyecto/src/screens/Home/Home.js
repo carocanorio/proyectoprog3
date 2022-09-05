@@ -54,6 +54,7 @@ class Home extends Component {
     searchResult(buscado){
         this.setState({
             dataSearchResults: buscado, 
+            busqueda: true
         })
       }
 
@@ -64,7 +65,7 @@ class Home extends Component {
 
                      <Form buscar={(buscado) => this.searchResult(buscado)}/>
 
-                     {this.state.dataSearchResults == null ? 
+                     {this.state.dataSearchResults.length === 0 ? 
                         <p >Sorry, we couldn't find any results</p> :                                                                                      
                          <section className='SearchResults-container'> 
                                 { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }                    
