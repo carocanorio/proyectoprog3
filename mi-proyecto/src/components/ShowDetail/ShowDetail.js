@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../MovieDetail/MovieDetailStyle.css'
-//import loadingGif from "../../loadingGif.gif";
-// <img src={loadingGif} alt="wait until the page loads" /> 
+import loadingGif from "../../loadingGif.gif";
 
 class ShowDetail extends Component{
 
@@ -34,32 +33,41 @@ class ShowDetail extends Component{
             <>
                 <h1 className="main-title">Series detail</h1>
 
-                <section className='movie-series-detail'>
-                    <article className='photo-container'>
-                        <img src={`https://image.tmdb.org/t/p/w1280/${this.state.showInformation.poster_path}`} alt={this.state.showInformation.name}/>
-                    </article>
-                    
-                    <article className='data'>
-                        <h2 className='detail-title'>{this.state.showInformation.name}</h2>
+                {
+                    this.state.showInformation.length === 0 ? 
+                        <div className='gif'>
+                            <img src={loadingGif} alt="wait until the page loads" /> 
+                        </div> :
 
-                        <p className='detail-info'>Rating: {this.state.showInformation.popularity}</p>
-
-                        <p className='detail-info'>Aired from {this.state.showInformation.first_air_date} to {this.state.showInformation.last_air_date}</p>
-
-                        <p className='detail-info'>{this.state.showInformation.overview}</p>
+                        <section className='movie-series-detail'>
+                        <article className='photo-container'>
+                            <img src={`https://image.tmdb.org/t/p/w1280/${this.state.showInformation.poster_path}`} alt={this.state.showInformation.name}/>
+                        </article>
                         
-                        <ul className='detail-info'>
-                            Genres:
-                            {
-                                this.state.showInformation.genres.map((oneGenre, i) => <li className='detail-info' key={oneGenre.id + i}>{oneGenre.name}</li>)
-                            }
-                        </ul>
+                        <article className='data'>
+                            <h2 className='detail-title'>{this.state.showInformation.name}</h2>
 
-                        <section className='favorite-container'>
-                            <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 
-                        </section>
-                    </article>
-                </section>
+                            <p className='detail-info'>Rating: {this.state.showInformation.popularity}</p>
+
+                            <p className='detail-info'>Aired from {this.state.showInformation.first_air_date} to {this.state.showInformation.last_air_date}</p>
+
+                            <p className='detail-info'>{this.state.showInformation.overview}</p>
+                            
+                            <ul className='detail-info'>
+                                Genres:
+                                {
+                                    this.state.showInformation.genres.map((oneGenre, i) => <li className='detail-info' key={oneGenre.id + i}>{oneGenre.name}</li>)
+                                }
+                            </ul>
+
+                            <section className='favorite-container'>
+                                <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 
+                            </section>
+                        </article>
+                    </section>
+                }
+
+                
             </>
         )
     }

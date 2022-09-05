@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './MovieDetailStyle.css';
-//import loadingGif from "../../loadingGif.gif";
-// <img src={loadingGif} alt="wait until the page loads" /> 
+import loadingGif from "../../loadingGif.gif";
+
 class MovieDetail extends Component{
 
     constructor(props){
@@ -80,12 +80,17 @@ class MovieDetail extends Component{
 
     
     render(){
-        console.log(this.state.movieInformation.genres)
         return(
             <>
                 <h1 className="main-title">Movie detail</h1>
 
-                <section className='movie-series-detail'>
+                {
+                    this.state.movieInformation.length === 0  ? 
+                    <div className='gif'>
+                        <img src={loadingGif} alt="wait until the page loads" /> 
+                    </div> 
+                    :
+                    <section className='movie-series-detail'>
                     <article className='photo-container'>
                         <img src={`https://image.tmdb.org/t/p/w342/${this.state.movieInformation.poster_path}`} alt={this.state.movieInformation.title}/>
                     </article>
@@ -111,6 +116,8 @@ class MovieDetail extends Component{
                         </section>
                     </article>
                 </section>
+
+                }
             </>
         )
     }
