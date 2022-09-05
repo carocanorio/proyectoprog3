@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 import Favs from "../../components/Favs/Favs"
 
 class Favourites extends Component{
@@ -24,4 +24,5 @@ class Favourites extends Component{
 
 export default Favourites
 
+*/
 
