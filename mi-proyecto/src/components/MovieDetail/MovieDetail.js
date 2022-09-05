@@ -8,9 +8,11 @@ class MovieDetail extends Component{
         super();
         this.state = {
             id: Number(props.match.params.id),
-            movieInformation: {},
+            movieInformation: {
+                genres: []
+            },
             favsText: 'Add to favourites',
-            inFavs: false
+            inFavs: false,
         }
     };
 
@@ -37,8 +39,6 @@ class MovieDetail extends Component{
                     favsText: 'Delete from favourites'
                 })
             }
-
-
         }
 
 
@@ -78,9 +78,9 @@ class MovieDetail extends Component{
         console.log(localStorage);
     }
 
-
-
+    
     render(){
+        console.log(this.state.movieInformation.genres)
         return(
             <>
                 <h1 className="main-title">Movie detail</h1>
@@ -98,6 +98,13 @@ class MovieDetail extends Component{
                         <p className='detail-info'>Release date: {this.state.movieInformation.release_date}</p>
 
                         <p className='detail-info'>{this.state.movieInformation.overview}</p>
+
+                        <ul className='detail-info'>
+                            Genres:
+                            {
+                                this.state.movieInformation.genres.map((oneGenre, i) => <li className='detail-info' key={oneGenre.id + i}>{oneGenre.name}</li>)
+                            }
+                        </ul>
 
                         <section className='favorite-container'>
                             <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 

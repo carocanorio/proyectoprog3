@@ -9,7 +9,9 @@ class ShowDetail extends Component{
         super();
         this.state = {
             id: Number(props.match.params.id),
-            showInformation: {}
+            showInformation: {
+                genres: []
+            }
         }
     };
 
@@ -46,7 +48,12 @@ class ShowDetail extends Component{
 
                         <p className='detail-info'>{this.state.showInformation.overview}</p>
                         
-                      
+                        <ul className='detail-info'>
+                            Genres:
+                            {
+                                this.state.showInformation.genres.map((oneGenre, i) => <li className='detail-info' key={oneGenre.id + i}>{oneGenre.name}</li>)
+                            }
+                        </ul>
 
                         <section className='favorite-container'>
                             <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 
