@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
-import SearchResults from '../../components/SearchResults/SearchResults';
+import SearchResultsMovies from '../../components/SearchResultsMovies/SearchResultsMovies';
 import loadingGif from "../../loadingGif.gif";
 
 
@@ -15,7 +15,9 @@ class Home extends Component {
             dataPopular: [],
             dataSearchResults: [],
             valueSearch:'',
-            dataForFilter: []
+            dataForFilter: [],
+            busqueda: false,
+            textSearch: '',
         }
     };
 
@@ -56,48 +58,79 @@ class Home extends Component {
             dataSearchResults: buscado, 
             busqueda: true
         })
-      }
+    };
+
+    clear() {
+        this.setState({
+            dataSearchResults: [],
+            busqueda: false,
+            textSearch: '',
+        })
+    };
+
+    controlarCambios(event) {
+        this.setState({
+            textSearch: event.target.value}, 
+            () => console.log(this.state.textSearch));
+    };
 
     render () {
             return (
 
                 <main className='main-home'>   
 
-                     <Form buscar={(buscado) => this.searchResult(buscado)}/>
+                    <Form buscar={(buscado) => this.searchResult(buscado)} 
+                    textSearch={this.state.textSearch} controlarCambios={(event) => this.controlarCambios(event)}
+                    />
 
-                     {this.state.dataSearchResults.length === 0 ? 
-                        <p >Sorry, we couldn't find any results</p> :                                                                                      
-                         <section className='SearchResults-container'> 
-                                { this.state.dataSearchResults.map((oneMovie) => <SearchResults key={oneMovie.id} data={oneMovie}/>) }                    
-                            
-                        </section>
-                    } 
+                    {
+                        this.state.busqueda ?
+                            this.state.dataSearchResults.length === 0 ?
+                                <>
+                                    <h1>Seach results</h1>
+                                    <button type='delete' onClick={() => this.clear()}>Clear search</button>
+                                    <p>Sorry, we couldn't find any results</p> 
+                                </>
+                                : 
+                                <>
+                                    <button type='delete' onClick={() => this.clear()}>Clear search</button>                                                                              
+                                    <section className='SearchResults-container'> 
+                                        { 
+                                            this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
+                                        }                    
+                                    </section>
+                                </>
+                        :
+                        <>
+                            <h2>Billboard</h2>
+                            <section className="billboard">
+                                {this.state.dataBillboard.length === 0 ? 
+                                    <img src={loadingGif} alt="wait until the page loads" /> :
+                                    <>
+                                        {
+                                            this.state.dataBillboard.map((oneMovie) => <Billboard key={oneMovie.id} data={oneMovie}/>)
+                                        }
+                                        <p className='view-all'>View all</p>
+                                    </>
+                                }
+                            </section>
 
-                        <h2>Billboard</h2>
-                        <section className="billboard">
-                            {this.state.dataBillboard.length === 0 ? 
+                            <h2>Popular TV shows</h2>
+                            <section className="morePopular">
+                                {this.state.dataPopular.length === 0?
                                 <img src={loadingGif} alt="wait until the page loads" /> :
                                 <>
                                     {
-                                        this.state.dataBillboard.map((oneMovie) => <Billboard key={oneMovie.id} data={oneMovie}/>)
+                                        this.state.dataPopular.map((oneTvShowPopular) => <MorePopular key={oneTvShowPopular.id} data={oneTvShowPopular}/>)
                                     }
                                     <p className='view-all'>View all</p>
                                 </>
-                            }
-                        </section>
-
-                        <h2>Popular TV shows</h2>
-                        <section className="morePopular">
-                            {this.state.dataPopular.length === 0?
-                            <img src={loadingGif} alt="wait until the page loads" /> :
-                            <>
-                                {
-                                    this.state.dataPopular.map((oneTvShowPopular) => <MorePopular key={oneTvShowPopular.id} data={oneTvShowPopular}/>)
                                 }
-                                <p className='view-all'>View all</p>
-                            </>
-                            }
-                        </section>
+                            </section>
+                        </>
+                    } 
+
+                        
                 </main>                    
 
                 );

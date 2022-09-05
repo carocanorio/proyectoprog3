@@ -23,7 +23,7 @@ class MorePopular extends Component{
             <React.Fragment>
             <article className='card-container'>                            
                                           
-                    <Link to={`/movies/id/${this.props.data.id}`}> 
+                    <Link to={`/shows/id/${this.props.data.id}`}> 
                     <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel serie"/>
                     </Link>                    
                     <h3>{ this.props.data.name}</h3> 
@@ -38,7 +38,7 @@ class MorePopular extends Component{
                         
                     } 
                     <div>
-                        <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
+                        <Link className='go-to-detail' to={`/shows/id/${this.props.data.id}`}>Go to detail</Link>                    
                         <p className='favourites'><span className="material-symbols-outlined">heart_plus </span></p>  
                     </div>
                                                                  

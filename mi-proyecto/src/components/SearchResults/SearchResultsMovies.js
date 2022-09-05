@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './SearchResultsStyle.css'
 
 
-class SearchResults extends Component{
+class SearchResultsMovies extends Component{
 
     constructor(props){
         super(props);
@@ -50,4 +50,4 @@ class SearchResults extends Component{
     }
 }
 
-export default SearchResults;
+export default SearchResultsMovies;

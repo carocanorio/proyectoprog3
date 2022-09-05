@@ -6,33 +6,32 @@ class Form extends Component{
     constructor(props){
         super(props)
         this.state={
-            movies:[],           
-            textSearch: ''
+            movies:[],
+            series: []
         }
     }
 
+
     evitarSubmit(event) {
+
         event.preventDefault();
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&query=${this.state.textSearch}&page=1&include_adult=false`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&query=${this.props.textSearch}&page=1&include_adult=false`)
             .then( res => res.json())
             .then( data => this.setState({
-                movies: data.results                             
-            },() => this.props.buscar(this.state.movies)))
+                movies: data.results
+            },
+            () => console.log(this.state.movies)
+            ))
             .catch()
-    }   
-    controlarCambios(event) {
-        this.setState({
-            textSearch: event.target.value}, () => console.log(this.state.textSearch));
-    }                
+    }                 
 
     render(){
         return(
             <React.Fragment>               
-                <form onSubmit={(event)=>this.evitarSubmit(event)}>               
-                <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.textSearch} placer holder= 'Search Movies'/>  
-                <button type="">Search</button>
+                <form onSubmit={(event)=>this.evitarSubmit(event)}>                 
+                <input  onChange={(event)=>this.props.controlarCambios(event)} value={this.props.textSearch} placeholder='Seatch Movies' />
+                <input   />
                 </form> 
-                
             </React.Fragment>
         )
     }
