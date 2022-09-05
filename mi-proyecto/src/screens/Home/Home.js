@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./homeStyles.css"
 import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';

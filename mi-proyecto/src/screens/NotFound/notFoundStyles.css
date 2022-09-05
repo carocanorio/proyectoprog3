@@ -1,0 +1,32 @@
+.notFound-responsive-img {
+    display: none;
+}
+.notFound-origin-img {
+    width: 100%;
+}
+
+/*Media queries*/
+/*Tablets*/
+@media (max-width: 768px){
+    
+    .notFound-origin-img {
+        display: none;
+    }
+    .notFound-responsive-img {
+        display: inline;
+        width: 100%;
+    }
+
+}    
+
+/*Mobile*/
+@media (max-width: 420px){ 
+    .notFound-origin-img {
+        display: none;
+    }
+    .notFound-responsive-img {
+        display: inline;
+        width: 100%;
+    }
+
+}
