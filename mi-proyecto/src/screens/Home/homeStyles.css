@@ -1,0 +1,129 @@
+
+/* HOME*/
+h1, h2 {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+}
+
+h1{
+    font-size: 70px;
+}
+
+
+.main-home h2 {
+    font-size: 50px;
+    margin: 5% ;
+}
+
+.view-all{
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    border-radius: 30px;
+    border-color: 0px;
+    padding: 10px;
+    background-color: rgba(240, 255, 255, 0.767);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    align-self: center;   
+    margin-left: 45%;
+
+}
+.view-all:hover,
+.active{
+box-shadow: 0rem 0rem 10px 8px rgba(136, 138, 155, 0.25);
+}
+
+.main-home {
+    text-align: center;
+}
+
+.billboard {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;    
+    border-radius: 5px;
+    width: 100%;
+}
+
+.morePopular {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;    
+    border-radius: 5px;
+    width: 100%;
+}
+.SearchResults-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;    
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+}
+.no-results{
+    color: white;
+}
+
+/*Media queries*/
+/*Tablets*/
+@media (max-width: 768px){
+    
+    .main-home h2 {
+        font-size: 35px;
+    }
+
+    .billboard {       
+        flex-direction: row;         
+        justify-content: space-around;
+    }    
+    
+    .morePopular {       
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .SearchResults-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .view-all {
+        margin-left: 0%;
+    }
+    
+}    
+
+/*Mobile*/
+@media (max-width: 420px){ 
+
+
+    .main-home {
+        text-align: center;
+    }
+
+    .main-home h2 {
+        font-size: 35px;
+    }
+    .billboard {       
+        flex-direction: column; 
+        align-items: center;        
+    }
+    .morePopular {       
+        flex-direction: column;
+        align-items: center;   
+    }
+    .SearchResults-container {
+        flex-direction: column;
+        align-items: center;   
+    }
+    .view-all {
+        margin-left: 0%;
+    }
+
+  
+
+}

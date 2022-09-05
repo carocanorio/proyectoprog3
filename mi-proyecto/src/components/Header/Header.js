@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import "./headerStyles.css"
 
 
 function Header (){
@@ -11,18 +12,27 @@ function Header (){
                 <li> 
                     <Link to='/'> Home</Link>
                 </li>
-                <li> 
-                    <Link to='/Favourites'>Favourites</Link>
-                </li>
+                
                 <li>                    
                     <div className="dropdown">
                         <p className="dropbtn">View all</p>                                                
                         <div className="dropdown-content">
-                        <Link to='/All'>All billboard movies</Link>
-                        <Link to='/All'>All popular TV shows</Link>                            
+                        <Link to='/AllMovies'>All billboard movies</Link>
+                        <Link to='/AllTvShows'>All popular TV shows</Link>                            
                         </div>
                     </div>
                 </li>
+
+                <li>                    
+                    <div className="dropdown">
+                        <p className="dropbtn">View all</p>                                                
+                        <div className="dropdown-content">
+                        <Link to='/favourite/movies'>Favourite movies</Link>
+                        <Link to='/favourite/series'>Favourite TV shows</Link>                            
+                        </div>
+                    </div>
+                </li>
+            
             </ul>
         </nav>
     )
