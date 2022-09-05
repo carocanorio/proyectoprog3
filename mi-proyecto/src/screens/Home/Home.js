@@ -78,7 +78,7 @@ class Home extends Component {
                             }
                         </section>
 
-                        <h2>More popular</h2>
+                        <h2>Popular TV shows</h2>
                         <section className="morePopular">
                             {this.state.dataPopular.length === 0?
                             <img src={loadingGif} alt="wait until the page loads" /> :

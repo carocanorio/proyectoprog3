@@ -40,7 +40,7 @@ class Billboard extends Component{
                     } 
                     <div className='go-to-detail-container'>
                         <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
-                        <p className='favourites'><span class="material-symbols-outlined">heart_plus </span></p>  
+                        <p className='favourites'><span className="material-symbols-outlined">heart_plus </span></p>  
                     </div>                                              
                     
                 </article>
