@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import MoviesFavs from "../../components/Favs/moviesFavs"
-import './favourites.css'
+import MoviesFavs from "../../components/MoviesFavs/MoviesFavs"
+import './favouriteMovies.css'
 
-class Favourites extends Component{
+class FavouriteMovies extends Component{
         
         constructor(){
             super();
             this.state = {
-                showMovies: [],
-                showSeries: []
+                showMovies: []
             }
         };
 
@@ -48,5 +47,5 @@ class Favourites extends Component{
         }
     }
 
-export default Favourites
+export default FavouriteMovies
 

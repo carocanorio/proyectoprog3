@@ -7,7 +7,8 @@ import Header from './components/Header/Header'
 import Home from './screens/Home/Home'
 import NotFound from "./screens/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
-import Favourites from "./screens/Favourites/Favourites"
+import FavouriteMovies from "./screens/FavouriteMovies/FavouriteMovies"
+import FavouriteSeries from "./screens/FavouriteSeries/FavouriteSeries"
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -21,9 +22,9 @@ function App() {
             <Route path='/' exact={true} component={Home} />
             <Route path='/movies/id/:id' component={MovieDetail}/>
             <Route path='/shows/id/:id' component={ShowDetail}/>
-            <Route path='/favourites' component={Favourites}/>
-
-            <Route path='' component={NotFound}  />
+            <Route path='/favourite/movies' component={FavouriteMovies}/>
+            <Route path='/favourite/series' component={FavouriteSeries}/>
+            <Route path='' component={NotFound} />
           </Switch>
         </main>
 

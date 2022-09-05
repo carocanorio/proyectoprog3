@@ -22,9 +22,17 @@ function Header (){
                         </div>
                     </div>
                 </li>
-                <li> 
-                    <Link to='/Favourites'>Favourites</Link>
+
+                <li>                    
+                    <div className="dropdown">
+                        <p className="dropbtn">View all</p>                                                
+                        <div className="dropdown-content">
+                        <Link to='/favourite/movies'>Favourite movies</Link>
+                        <Link to='/favourite/series'>Favourite TV shows</Link>                            
+                        </div>
+                    </div>
                 </li>
+            
             </ul>
         </nav>
     )
