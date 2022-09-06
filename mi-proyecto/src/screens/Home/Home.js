@@ -5,6 +5,7 @@ import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
 // import SearchResultsMovies from '../../components/SearchResultsMovies/SearchResultsMovies';
 import loadingGif from "../../loadingGif.gif";
+import { Link } from 'react-router-dom';
 
 
 class Home extends Component {
@@ -111,10 +112,17 @@ class Home extends Component {
                                         {
                                             this.state.dataBillboard.map((oneMovie) => <Billboard key={oneMovie.id} data={oneMovie}/>)
                                         }
-                                        <p className='view-all'>View all</p>
                                     </>
                                 }
                             </section>
+
+                            <div className='viewAllContainer'>
+                                    <Link to="/AllMovies"> 
+                                            <button className='viewAllButton'>View all Movies </button>
+                                    </Link>
+                            </div>
+
+
 
                             <h2>Popular TV shows</h2>
                             <section className="morePopular">
@@ -124,10 +132,15 @@ class Home extends Component {
                                     {
                                         this.state.dataPopular.map((oneTvShowPopular) => <MorePopular key={oneTvShowPopular.id} data={oneTvShowPopular}/>)
                                     }
-                                    <p className='view-all'>View all</p>
                                 </>
                                 }
                             </section>
+
+                            <div>
+                                <Link to="/AllSeries"> 
+                                            <button className='viewAllButton'>View all Series</button>
+                                </Link>
+                            </div>
                         </>
                     } 
 

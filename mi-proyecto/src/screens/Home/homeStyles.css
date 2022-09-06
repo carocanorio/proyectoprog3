@@ -16,22 +16,6 @@ h1{
     margin: 5% ;
 }
 
-.view-all{
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    border-radius: 30px;
-    border-color: 0px;
-    padding: 10px;
-    background-color: rgba(240, 255, 255, 0.767);
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    align-self: center;   
-    margin-left: 45%;
-
-}
-.view-all:hover,
 .active{
 box-shadow: 0rem 0rem 10px 8px rgba(136, 138, 155, 0.25);
 }
@@ -70,6 +54,15 @@ box-shadow: 0rem 0rem 10px 8px rgba(136, 138, 155, 0.25);
     color: white;
 }
 
+.viewAllButton {
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    border: white 2px solid;
+    border-radius: 15px;
+    padding: 11px 17px 11px 17px;
+}
+
 /*Media queries*/
 /*Tablets*/
 @media (max-width: 768px){
@@ -91,8 +84,9 @@ box-shadow: 0rem 0rem 10px 8px rgba(136, 138, 155, 0.25);
         flex-direction: row;
         justify-content: space-around;
     }
-    .view-all {
-        margin-left: 0%;
+    div.viewAllContainer {
+        display: flex;
+        justify-content: center;
     }
     
 }    
@@ -119,9 +113,6 @@ box-shadow: 0rem 0rem 10px 8px rgba(136, 138, 155, 0.25);
     .SearchResults-container {
         flex-direction: column;
         align-items: center;   
-    }
-    .view-all {
-        margin-left: 0%;
     }
 
   
