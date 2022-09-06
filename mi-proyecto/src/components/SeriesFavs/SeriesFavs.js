@@ -18,7 +18,7 @@ class SeriesFavs extends Component{
 
     render() { //cambiar fetch
         return(
-            <article className='card-container'>                            
+            <article className='favouriteSeriesContainer'>                            
                                           
                     <Link to={`/movies/id/${this.props.data.id}`}> 
                     <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel serie"/>
