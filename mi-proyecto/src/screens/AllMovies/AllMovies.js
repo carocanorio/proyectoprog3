@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import AllSeriesCards from "../../components/AllSeriesCards/AllSeriesCards";
-import './AllSeries.css'
+import AllMoviesCards from "../../components/AllMoviesCards/AllMoviesCards";
+import './AllMovies.css'
 
-class AllSeries extends Component {
+class AllMovies extends Component {
 
 
     constructor(props) {
@@ -16,7 +16,7 @@ class AllSeries extends Component {
 
 
     componentDidMount() {
-        let url = 'https://api.themoviedb.org/3/tv/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1'
+        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=1'
         fetch(url)
         .then(response => response.json())
         .then(data => this.setState({
@@ -28,8 +28,8 @@ class AllSeries extends Component {
     }
 
 
-    showMoreSeries () {
-        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=${this.state.nextPage}`) //fetch de la url con la siguiente pagina
+    showMoreCharacters () {
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&page=${this.state.nextPage}`) //fetch de la url con la siguiente pagina
         .then(response => response.json())
         .then(data => this.setState({
             data: this.state.data.concat(data.results) ,
@@ -53,16 +53,16 @@ class AllSeries extends Component {
 
             <div>
             
-            <div className="allSeriesH1"> <h1>All Series</h1> </div>
+            <div className="allMoviesH1"> <h1>All Movies</h1> </div>
 
-            <section className='allSeriesContainer'>
+            <section className='allMoviesContainer'>
             
-            {this.state.data.map((data, id) => <AllSeriesCards data={data} key={data + '_' + id}/>)}
+            {this.state.data.map((data, id) => <AllMoviesCards data={data} key={data + '_' + id}/>)}
 
             
             </section> 
 
-            <div className="buttonVerMasAllSeries-container"> <button onClick={() => this.showMoreSeries()} className="buttonVerMasAllSeries"> View more </button> </div>
+            <div className="buttonVerMasAllMovies-container"> <button onClick={() => this.showMoreCharacters()} className="buttonVerMasAllMovies"  > View more </button> </div>
 
             </div>
             </React.Fragment>
@@ -74,4 +74,4 @@ class AllSeries extends Component {
 }
 
 
-export default AllSeries
+export default AllMovies
