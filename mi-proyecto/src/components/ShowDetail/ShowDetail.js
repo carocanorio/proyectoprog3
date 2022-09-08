@@ -10,7 +10,9 @@ class ShowDetail extends Component{
             id: Number(props.match.params.id),
             showInformation: {
                 genres: []
-            }
+            },
+            favsText: 'Add to favourites',
+            inFavs: false,
         }
     };
 
@@ -24,6 +26,54 @@ class ShowDetail extends Component{
             ))
         .catch( error =>	console.log('El error fue: ' + error))
 
+        let favouriteSeries = []
+        let recuperoStorage = localStorage.getItem('favouriteSeries')
+
+        if(recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage)
+            favouriteSeries = storageToArray
+
+            if(favouriteSeries.includes(this.state.showInformation.id)) {
+                this.setState({
+                    favsText: 'Delete from favourites'
+                })
+            }
+        }
+
+    }
+
+    addAndDeleteFavourites(id) {
+        let favouriteSeries = []
+        let recuperoStorage = localStorage.getItem('favouriteSeries')
+
+        if(recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage)
+
+            favouriteSeries = storageToArray
+
+        }
+
+        if(favouriteSeries.includes(id)) {
+            favouriteSeries = favouriteSeries.filter(eachID => eachID !== id)
+            this.setState({
+                favsText: 'Add to favourites'
+            })
+        } else {
+            favouriteSeries.push(id)
+            this.setState({
+                favsText: 'Delete from favourites'
+            })
+        }
+
+
+
+        let favsToString = JSON.stringify(favouriteSeries)
+
+        localStorage.setItem('favouriteSeries', favsToString)
+
+        console.log(localStorage);
     }
 
 
@@ -61,7 +111,7 @@ class ShowDetail extends Component{
                             </ul>
 
                             <section className='favorite-container'>
-                                <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.movieInformation.id)}>{this.state.favsText}</p> 
+                                <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.state.showInformation.id)}>{this.state.favsText}</p> 
                             </section>
                         </article>
                     </section>

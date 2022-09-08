@@ -18,7 +18,7 @@ function Header (){
                         <p className="dropbtn">View all</p>                                                
                         <div className="dropdown-content">
                         <Link to='/AllMovies'>All billboard movies</Link>
-                        <Link to='/AllTvShows'>All popular TV shows</Link>                            
+                        <Link to='/AllSeries'>All popular TV shows</Link>                            
                         </div>
                     </div>
                 </li>

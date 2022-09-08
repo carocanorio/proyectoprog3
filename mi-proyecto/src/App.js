@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer";
 import FavouriteMovies from "./screens/FavouriteMovies/FavouriteMovies"
 import FavouriteSeries from "./screens/FavouriteSeries/FavouriteSeries"
 import { Route, Switch } from 'react-router-dom';
+import AllMovies from "./screens/AllMovies/AllMovies";
+import AllSeries from "./screens/AllSeries/AllSeries"
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path='/shows/id/:id' component={ShowDetail}/>
             <Route path='/favourite/movies' component={FavouriteMovies}/>
             <Route path='/favourite/series' component={FavouriteSeries}/>
+            <Route path='/AllMovies' component={AllMovies}/>
+            <Route path='/AllSeries' component={AllSeries}/>
             <Route path='' component={NotFound} />
           </Switch>
         </main>
