@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AllMoviesCards from "../../components/AllMoviesCards/AllMoviesCards";
 import './AllMovies.css';
-import '../../loadingGif.gif'
+import loadingGif from '../../loadingGif.gif'
 
 class AllMovies extends Component {
 
