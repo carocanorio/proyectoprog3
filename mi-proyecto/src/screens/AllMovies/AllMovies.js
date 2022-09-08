@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AllMoviesCards from "../../components/AllMoviesCards/AllMoviesCards";
-import './AllMovies.css'
+import './AllMovies.css';
+import '../../loadingGif.gif'
 
 class AllMovies extends Component {
 
@@ -45,7 +46,7 @@ class AllMovies extends Component {
 
             this.state.fetching === true ?
                 
-            <h1> Cargando... </h1> 
+            <img src={loadingGif} alt="wait until the page loads" />
             
             : 
 
