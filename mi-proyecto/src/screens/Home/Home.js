@@ -20,6 +20,7 @@ class Home extends Component {
             dataForFilter: [],
             busqueda: false,
             textSearch: '',
+            media: '',
         }
     };
 
@@ -55,11 +56,21 @@ class Home extends Component {
           dataSearchResults: movieName.filter((Movie) => Movie.title.toLowerCase().includes(textToFilter) )})
       }; 
     
-    searchResult(buscado){
-        this.setState({
-            dataSearchResults: buscado, 
-            busqueda: true
-        })
+    searchResults(){
+         fetch(`https://api.themoviedb.org/3/search/${this.state.media}?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&query=${this.state.textSearch}&page=1&include_adult=false`)
+            .then( res => res.json())
+            .then( data => this.setState({
+                dataSearchResults: data.results
+            },
+            () => console.log(this.state.dataSearchResults)
+            ))
+            .catch(e=>console.log(e))
+        
+        
+            // this.setState({
+            // dataSearchResults: buscado, 
+            // busqueda: true
+            // })
     };
 
     clear() {
@@ -76,13 +87,19 @@ class Home extends Component {
             () => console.log(this.state.textSearch));
     };
 
+    getMedia(event){
+        this.setState({
+            media: event.target.value
+        }, ()=>console.log(this.state.media))
+    }
+
     render () {
             return (
 
                 <main className='main-home'>   
 
-                    <Form buscar={(buscado) => this.searchResult(buscado)} 
-                    textSearch={this.state.textSearch} controlarCambios={(event) => this.controlarCambios(event)}
+                    <Form buscar={(buscado) => this.searchResults(buscado)} 
+                    textSearch={this.state.textSearch} controlarCambios={(event) => this.controlarCambios(event)} media={(e)=>this.getMedia(e)}
                     />
 
                     {
