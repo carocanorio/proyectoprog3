@@ -25,7 +25,7 @@ function Header (){
 
                 <li>                    
                     <div className="dropdown">
-                        <p className="dropbtn">View all</p>                                                
+                        <p className="dropbtn">Favourites</p>                                                
                         <div className="dropdown-content">
                         <Link to='/favourite/movies'>Favourite movies</Link>
                         <Link to='/favourite/series'>Favourite TV shows</Link>                            
