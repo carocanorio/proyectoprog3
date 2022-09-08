@@ -91,7 +91,7 @@ class ShowDetail extends Component{
 
                         <section className='movie-series-detail'>
                         <article className='photo-container'>
-                            <img src={`https://image.tmdb.org/t/p/w1280/${this.state.showInformation.poster_path}`} alt={this.state.showInformation.name}/>
+                            <img src={`https://image.tmdb.org/t/p/w342/${this.state.showInformation.poster_path}`} alt={this.state.showInformation.name}/>
                         </article>
                         
                         <article className='data'>
