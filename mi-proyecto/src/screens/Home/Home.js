@@ -89,12 +89,12 @@ class Home extends Component {
                             this.state.dataSearchResults.length === 0 ?
                                 <>
                                     <h1>Seach results</h1>
-                                    <button type='delete' onClick={() => this.clear()}>Clear search</button>
+                                    <button type='button' onClick={() => this.clear()}>Clear search</button>
                                     <p>Sorry, we couldn't find any results</p> 
                                 </>
                                 : 
                                 <>
-                                    <button type='delete' onClick={() => this.clear()}>Clear search</button>                                                                              
+                                    <button type='button' onClick={() => this.clear()}>Clear search</button>                                                                              
                                     <section className='SearchResults-container'> 
                                         { 
                                             this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
