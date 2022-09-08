@@ -16,6 +16,10 @@ class MoviesFavs extends Component{
         this.setState({viewMore: false} )
     }
 
+    componentDidMount() {
+        
+    }
+
     render() {
         return(
             <article className='favouritesCard'>                            

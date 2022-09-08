@@ -30,11 +30,11 @@ class MovieDetail extends Component{
         let recuperoStorage = localStorage.getItem('favourites')
 
         if(recuperoStorage !== null) {
-
+                
             let storageToArray = JSON.parse(recuperoStorage)
             favourites = storageToArray
-
-            if(favourites.includes(this.state.movieInformation.id)) {
+            console.log(favourites);
+            if(favourites.includes(this.state.id)) {
                 this.setState({
                     favsText: 'Delete from favourites'
                 })

@@ -29,8 +29,12 @@ class Form extends Component{
         return(
             <React.Fragment>               
                 <form onSubmit={(event)=>this.evitarSubmit(event)}>                 
-                <input  onChange={(event)=>this.props.controlarCambios(event)} value={this.props.textSearch} placeholder='Seatch Movies' />
-                <input   />
+                <input  onChange={(event)=>this.props.controlarCambios(event)} value={this.props.textSearch} placeholder='Search Movies' />
+                <label>Peliculas</label>
+                <input type="radio" name="media" value="movie" checked/>
+                <label>Series</label>
+                <input type="radio" name="media" value="serie"/>
+            
                 </form> 
             </React.Fragment>
         )
