@@ -31,16 +31,12 @@
 }
 
 .favorite{
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    border-radius: 25px;
-    border-color: 0px;
-    padding: 10px;
-    background-color: rgba(240, 255, 255, 0.767);
-    text-align: left;
-    color: black;
-    font-weight: bold;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    font-size: 12px;
+    border: white 2px solid;
+    border-radius: 15px;
+    padding: 11px 12px 11px 12px;
 }
 
 .movie-series-detail {

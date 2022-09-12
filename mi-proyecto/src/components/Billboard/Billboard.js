@@ -8,7 +8,10 @@ class Billboard extends Component{
     constructor(props){
         super(props);
         this.state = {
-            viewMore: false
+            viewMore: false,
+            favsText: 'Add to favourites',
+            inFavs: false,
+            id: ' '
         }
     };
     show(){
@@ -16,6 +19,59 @@ class Billboard extends Component{
     }
     hide(){
         this.setState({viewMore: false} )
+    }
+
+    componentDidMount() {
+        let favourites = []
+        let recuperoStorage = localStorage.getItem('favourites')
+
+        if(recuperoStorage !== null) {
+                
+            let storageToArray = JSON.parse(recuperoStorage)
+            favourites = storageToArray
+            
+            console.log(favourites);
+            if(favourites.includes(this.props.data.id)) {
+                this.setState({
+                    favsText: 'Delete from favourites'
+                })
+            }
+        }
+    }
+
+    addAndDeleteFavourites(id) {
+        let favourites = []
+        let recuperoStorage = localStorage.getItem('favourites')
+
+        if(recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage)
+
+            favourites = storageToArray
+
+        }
+
+        if(favourites.includes(id)) {
+            favourites = favourites.filter(eachID => eachID !== id)
+            this.setState({
+                favsText: 'Add to favourites',
+                id: id
+            })
+        } else {
+            favourites.push(id)
+            this.setState({
+                favsText: 'Delete from favourites',
+                id: id
+            })
+        }
+
+
+
+        let favsToString = JSON.stringify(favourites)
+
+        localStorage.setItem('favourites', favsToString)
+
+        console.log(localStorage);
     }
 
     render(){
@@ -39,9 +95,12 @@ class Billboard extends Component{
                         
                     } 
                     <div className='go-to-detail-container'>
-                        <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
-                        <p className='favourites'><span className="material-symbols-outlined">heart_plus </span></p>  
-                    </div>                                              
+                        <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>    
+                        <section className='favorite-container'>
+                            <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.props.data.id)}>{this.state.favsText}</p> 
+                        </section>           
+                    </div>  
+                                                                     
                     
                 </article>
 

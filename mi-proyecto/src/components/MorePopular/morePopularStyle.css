@@ -29,13 +29,14 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
     margin: 5px;
 }
 
-.card-container div {
+/* .card-container div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 .go-to-detail {
+    /*
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
@@ -46,7 +47,15 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
     text-align: center;
     color: black;
     font-weight: bold;
-}
+    */
+        background-color: rgb(44, 43, 43);
+        color: white;
+        font-size: 12px;
+        border: white 2px solid;
+        border-radius: 15px;
+        padding: 11px 12px 11px 12px;
+        margin-top: 12px;
+    }
 
 
 /*Media queries*/

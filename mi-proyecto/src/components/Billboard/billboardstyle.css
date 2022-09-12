@@ -28,13 +28,14 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
     font-weight: bold;
     margin: 5px;
 }
-.card-container div {
+/* .card-container div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 .go-to-detail {
+    /*
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
@@ -45,13 +46,23 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
     text-align: center;
     color: black;
     font-weight: bold;
+*/
+   
+        background-color: black;
+        color: white;
+        font-size: 22px;
+        border: white 2px solid;
+        border-radius: 15px;
+        padding: 11px 17px 11px 17px;
+
 
 }
 
-.go-to-detail:hover,
+/* .go-to-detail:hover,
 .active{
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
-}
+} */
+
 
 /*Media queries*/
 /*Tablets*/
