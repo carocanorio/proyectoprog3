@@ -4,6 +4,7 @@ import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
 import SearchResultsMovies from "../../components/SearchResultsMovies/SearchResultsMovies";
+import SearchResultsTVShows from '../../components/SearchResultsTVShows/SearchResultsTVShows';
 import loadingGif from "../../loadingGif.gif";
 import { Link } from 'react-router-dom';
 
@@ -109,7 +110,10 @@ class Home extends Component {
                                     <button type='button' onClick={() => this.clear()}>Clear search</button>                                                                              
                                     <section className='SearchResults-container'> 
                                         { 
+                                        this.state.media === 'movie' ?
                                          this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
+                                         :
+                                         this.state.dataSearchResults.map((oneSerie) => <SearchResultsTVShows key={oneSerie.id} data={oneSerie}/>) 
                                         }                    
                                     </section>
                                 </>
