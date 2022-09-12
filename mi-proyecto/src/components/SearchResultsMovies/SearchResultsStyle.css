@@ -34,6 +34,16 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 
+.go-to-detail{
+    background-color: rgb(44, 43, 43);
+    color: white;
+    font-size: 12px;
+    border: white 2px solid;
+    border-radius: 15px;
+    padding: 11px 12px 11px 12px;
+    margin-top: 12px;
+}
+
 /*Media queries*/
 /*Tablets*/
 @media (max-width: 768px){

@@ -86,7 +86,7 @@ class MovieDetail extends Component{
                 <h1 className="main-title">Movie detail</h1>
 
                 {
-                    this.state.movieInformation.length === 0  ? 
+                    this.state.movieInformation.genres.length === 0  ? 
                     <div className='gif'>
                         <img src={loadingGif} alt="wait until the page loads" /> 
                     </div> 
@@ -99,7 +99,7 @@ class MovieDetail extends Component{
                     <article className='data'>
                         <h2 className='detail-title'>{this.state.movieInformation.title}</h2>
 
-                        <p className='detail-info'>Rating: {this.state.movieInformation.popularity}</p>
+                        <p className='detail-info'>Rating: {Number(this.state.movieInformation.popularity).toFixed(0)}</p>
 
                         <p className='detail-info'>Release date: {this.state.movieInformation.release_date}</p>
 

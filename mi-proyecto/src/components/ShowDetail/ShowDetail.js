@@ -84,10 +84,11 @@ class ShowDetail extends Component{
                 <h1 className="main-title-series">Series detail</h1>
 
                 {
-                    this.state.showInformation.length === 0 ? 
+                    this.state.showInformation.genres.length === 0 ? 
                         <div className='gif-series'>
                             <img src={loadingGif} alt="wait until the page loads" /> 
-                        </div> :
+                        </div> 
+                        :
 
                         <section className='series-detail'>
                         <article className='photo-container-series'>
@@ -97,7 +98,7 @@ class ShowDetail extends Component{
                         <article className='data-series'>
                             <h2 className='detail-title-series'>{this.state.showInformation.name}</h2>
 
-                            <p className='detail-info-series'>Rating: {this.state.showInformation.popularity}</p>
+                            <p className='detail-info-series'>Rating: {Number(this.state.showInformation.popularity).toFixed(0)}</p>
 
                             <p className='detail-info-series'>Aired from {this.state.showInformation.first_air_date} to {this.state.showInformation.last_air_date}</p>
 
