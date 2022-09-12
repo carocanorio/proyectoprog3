@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import AllMoviesCards from "../../components/AllMoviesCards/AllMoviesCards";
+
 import './AllMovies.css';
 import loadingGif from '../../loadingGif.gif'
+import Billboard from "../../components/Billboard/Billboard";
 
 class AllMovies extends Component {
 
@@ -58,8 +59,8 @@ class AllMovies extends Component {
 
             <section className='allMoviesContainer'>
             
-            {this.state.data.map((data, id) => <AllMoviesCards data={data} key={data + '_' + id}/>)}
 
+            {this.state.data.map((data, id) => <Billboard data={data} key={data + '_' + id}/>)}
             
             </section> 
 

@@ -29,7 +29,7 @@ class MorePopular extends Component{
             let storageToArray = JSON.parse(recuperoStorage)
             favouriteSeries = storageToArray
 
-            if(favouriteSeries.includes(this.state.id)) {
+            if(favouriteSeries.includes(this.props.data.id)) {
                 this.setState({
                     favsText: 'Delete from favourites'
                 })

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import AllSeriesCards from "../../components/AllSeriesCards/AllSeriesCards";
+// import AllSeriesCards from "../../components/AllSeriesCards/AllSeriesCards";
 import './AllSeries.css';
 import loadingGif from '../../loadingGif.gif'
+import MorePopular from "../../components/MorePopular/MorePopular";
 
 class AllSeries extends Component {
 
@@ -58,7 +59,7 @@ class AllSeries extends Component {
 
             <section className='allSeriesContainer'>
             
-            {this.state.data.map((data, id) => <AllSeriesCards data={data} key={data + '_' + id}/>)}
+            {this.state.data.map((data, id) => <MorePopular data={data} key={data + '_' + id}/>)}
 
             
             </section> 

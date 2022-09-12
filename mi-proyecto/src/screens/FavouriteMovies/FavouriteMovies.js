@@ -29,8 +29,14 @@ class FavouriteMovies extends Component{
                 }) // pusheo la data
                 return true; 
             });
+        }
 
+        eliminarDefavs(id) {
+            const pelisFiltradas = this.state.showMovies.filter((movie) => movie.id !== id);
 
+            this.setState({
+                showMovies: pelisFiltradas
+            })
         }
         
 
@@ -40,7 +46,7 @@ class FavouriteMovies extends Component{
                 <div>
                     <h2 className='h3Favourite'>Favourite movies</h2>
                     <section className='favouritesContainer'>
-                        {this.state.showMovies.map((data, id) => <MoviesFavs key={data + '_' + id} data={data} />)}
+                        {this.state.showMovies.map((data, id) => <MoviesFavs key={data + '_' + id} data={data} eliminar={(id) => this.eliminarDefavs(id)} />)}
                     </section>
                 </div>
             )

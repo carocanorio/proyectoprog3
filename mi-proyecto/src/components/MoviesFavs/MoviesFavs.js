@@ -4,12 +4,12 @@ import './moviesFavs.css'
 
 class MoviesFavs extends Component{
     constructor(props){
-        super();
+        super(props);
         this.state = {
             viewMore: false,
             favsText: 'Add to favourites',
             inFavs: false,
-            id: ' '
+            id: ''
         }
     }
     show(){
@@ -49,11 +49,8 @@ class MoviesFavs extends Component{
         }
 
         if(favourites.includes(id)) {
-            favourites = favourites.filter(eachID => eachID !== id)
-            this.setState({
-                favsText: 'Add to favourites',
-                id: id
-            })
+            favourites = favourites.filter(eachID => eachID !== id);
+            this.props.eliminar(id);
         } else {
             favourites.push(id)
             this.setState({

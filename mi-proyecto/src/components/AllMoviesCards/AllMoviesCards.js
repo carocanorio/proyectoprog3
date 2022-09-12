@@ -20,7 +20,7 @@ class AllMoviesCards extends Component{
         this.setState({viewMore: false} )
     }
     
-    omponentDidMount() {
+    componentDidMount() {
         let favourites = []
         let recuperoStorage = localStorage.getItem('favourites')
 
@@ -30,6 +30,7 @@ class AllMoviesCards extends Component{
             favourites = storageToArray
             
             console.log(favourites);
+            console.log(this.props.data.id)
             if(favourites.includes(this.props.data.id)) {
                 this.setState({
                     favsText: 'Delete from favourites'
