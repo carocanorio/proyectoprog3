@@ -33,6 +33,7 @@ class MovieDetail extends Component{
                 
             let storageToArray = JSON.parse(recuperoStorage)
             favourites = storageToArray
+            
             console.log(favourites);
             if(favourites.includes(this.state.id)) {
                 this.setState({

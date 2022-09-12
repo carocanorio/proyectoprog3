@@ -30,7 +30,7 @@ class MoviesFavs extends Component{
                     <h3>{ this.props.data.title}</h3> 
                     <p>Release date: {this.props.data.release_date}</p>                    
                     {this.state.viewMore ? 
-                        <section className='extra'>                            
+                        <section className='extraMovieFavs'>                            
                             <p>Description: {this.props.data.overview}</p> 
                             <p className='moreInfoMovie' onClick={() => this.hide()}>View less</p>
                         </section>
@@ -40,7 +40,7 @@ class MoviesFavs extends Component{
                     } 
                     <div>
                         <Link className='go-to-detail-favMovie' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
-                        <p className='favourites'><span className="material-symbols-outlined">heart_plus </span></p>  
+                        <p className='favouriteMoviesFav'><span className="material-symbols-outlined">heart_plus </span></p>  
                     </div>
                                                                  
                     

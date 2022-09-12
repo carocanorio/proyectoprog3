@@ -34,7 +34,7 @@ class ShowDetail extends Component{
             let storageToArray = JSON.parse(recuperoStorage)
             favouriteSeries = storageToArray
 
-            if(favouriteSeries.includes(this.state.showInformation.id)) {
+            if(favouriteSeries.includes(this.state.id)) {
                 this.setState({
                     favsText: 'Delete from favourites'
                 })
