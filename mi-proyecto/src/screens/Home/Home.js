@@ -3,7 +3,6 @@ import "./homeStyles.css"
 import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
-// import SearchResultsMovies from '../../components/SearchResultsMovies/SearchResultsMovies';
 import loadingGif from "../../loadingGif.gif";
 import { Link } from 'react-router-dom';
 
@@ -60,17 +59,11 @@ class Home extends Component {
          fetch(`https://api.themoviedb.org/3/search/${this.state.media}?api_key=088e2f24d66adc86c55d5e994558d967&language=en-US&query=${this.state.textSearch}&page=1&include_adult=false`)
             .then( res => res.json())
             .then( data => this.setState({
-                dataSearchResults: data.results
+                dataSearchResults: data.results, busqueda: true
             },
             () => console.log(this.state.dataSearchResults)
             ))
             .catch(e=>console.log(e))
-        
-        
-            // this.setState({
-            // dataSearchResults: buscado, 
-            // busqueda: true
-            // })
     };
 
     clear() {
@@ -115,7 +108,7 @@ class Home extends Component {
                                     <button type='button' onClick={() => this.clear()}>Clear search</button>                                                                              
                                     <section className='SearchResults-container'> 
                                         { 
-                                         //   this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
+                                         //this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
                                         }                    
                                     </section>
                                 </>
