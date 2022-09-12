@@ -3,6 +3,7 @@ import "./homeStyles.css"
 import Billboard from '../../components/Billboard/Billboard';
 import MorePopular from '../../components/MorePopular/MorePopular';
 import Form from '../../components/Form/Form';
+import SearchResultsMovies from "../../components/SearchResultsMovies/SearchResultsMovies";
 import loadingGif from "../../loadingGif.gif";
 import { Link } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ class Home extends Component {
             dataForFilter: [],
             busqueda: false,
             textSearch: '',
-            media: '',
+            media: 'movie',
         }
     };
 
@@ -101,14 +102,14 @@ class Home extends Component {
                                 <>
                                     <h1>Seach results</h1>
                                     <button type='button' onClick={() => this.clear()}>Clear search</button>
-                                    <p>Sorry, we couldn't find any results</p> 
+                                    <p class='sorry-par'>Sorry, we couldn't find any results</p> 
                                 </>
                                 : 
                                 <>
                                     <button type='button' onClick={() => this.clear()}>Clear search</button>                                                                              
                                     <section className='SearchResults-container'> 
                                         { 
-                                         //this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
+                                         this.state.dataSearchResults.map((oneMovie) => <SearchResultsMovies key={oneMovie.id} data={oneMovie}/>) 
                                         }                    
                                     </section>
                                 </>

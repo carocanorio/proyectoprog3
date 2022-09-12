@@ -19,11 +19,11 @@ class Form extends Component{
         return(
             <React.Fragment>               
                 <form onSubmit={(event)=>this.evitarSubmit(event)}>                 
-                <input  onChange={(event)=>this.props.controlarCambios(event)} value={this.props.textSearch} placeholder='Search Movies' />
-                <label>Peliculas</label>
-                <input onChange={(e)=>this.props.media(e)} type="radio" name="media" value="movie"/>
-                <label>Series</label>
-                <input onChange={(e)=>this.props.media(e)} type="radio" name="media" value="tv"/>
+                <input  onChange={(event)=>this.props.controlarCambios(event)} value={this.props.textSearch} placeholder='Search' />
+                <label className='radio-button'>Peliculas</label>
+                <input onChange={(e)=>this.props.media(e)} type="radio" name="media" value="movie" />
+                <label className='radio-button'>Series</label>
+                <input onChange={(e)=>this.props.media(e)} type="radio" name="media" value="tv" />
             
                 </form> 
             </React.Fragment>
