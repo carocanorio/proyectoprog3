@@ -32,20 +32,32 @@ class FavouriteSeries extends Component{
 
 
         }
+
+        eliminarDefavs(id) {
+            const seriesFiltradas = this.state.showSeries.filter((serie) => serie.id !== id);
+
+            this.setState({
+                showSeries: seriesFiltradas
+            })
+        }
         
 
         render() {
+        
+                return(
+                    <div>
+                        <h2 className='h3FavouriteSeries'>Favourite Series</h2>
+                        <section className='favouritesContainerSeries'>
+                            {this.state.showSeries.map((data, id) => <SeriesFavs key={data + '_' + id} data={data} eliminar={(id) => this.eliminarDefavs(id)}/>)}
+                        </section>
+                    </div>
+                )
+
+            }
             
-            return(
-                <div>
-                    <h2 className='h3FavouriteSeries'>Favourite Series</h2>
-                    <section className='favouritesContainerSeries'>
-                        {this.state.showSeries.map((data, id) => <SeriesFavs key={data + '_' + id} data={data} />)}
-                    </section>
-                </div>
-            )
+            
         }
-    }
+
 
 export default FavouriteSeries
 

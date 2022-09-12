@@ -9,7 +9,8 @@ class MoviesFavs extends Component{
             viewMore: false,
             favsText: 'Add to favourites',
             inFavs: false,
-            id: ''
+            id: '',
+            favsExist: ''
         }
     }
     show(){
@@ -33,7 +34,7 @@ class MoviesFavs extends Component{
                     favsText: 'Delete from favourites'
                 })
             }
-        }
+        } 
     }
 
     addAndDeleteFavourites(id) {
@@ -69,34 +70,36 @@ class MoviesFavs extends Component{
     }
 
     render() {
-        return(
-            <article className='favouritesCard'>                            
-                                          
-                    <Link to={`/movies/id/${this.props.data.id}`}> 
-                    <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel película"/>
-                    </Link>                    
-                    <h3>{ this.props.data.title}</h3> 
-                    <p>Release date: {this.props.data.release_date}</p>                    
-                    {this.state.viewMore ? 
-                        <section className='extraMovieFavs'>                            
-                            <p>Description: {this.props.data.overview}</p> 
-                            <p className='moreInfoMovie' onClick={() => this.hide()}>View less</p>
-                        </section>
-                        :                                                 
-                        <p className='moreInfoMovie' onClick={() => this.show()}>View more</p>                         
+       
+            return(
+                <article className='favouritesCard'>                       
+                                              
+                        <Link to={`/movies/id/${this.props.data.id}`}> 
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.props.data.poster_path}`} alt="Cartel película"/>
+                        </Link>                    
+                        <h3>{ this.props.data.title}</h3> 
+                        <p>Release date: {this.props.data.release_date}</p>                    
+                        {this.state.viewMore ? 
+                            <section className='extraMovieFavs'>                            
+                                <p>Description: {this.props.data.overview}</p> 
+                                <p className='moreInfoMovie' onClick={() => this.hide()}>View less</p>
+                            </section>
+                            :                                                 
+                            <p className='moreInfoMovie' onClick={() => this.show()}>View more</p>                         
+                            
+                        } 
+                        <div className='card-containerMovieFav'>
+                            <Link className='go-to-detailMovieFav' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>    
+                            <section className='favorite-containerMoviesFav'>
+                                <p className='favoriteMoviesFav' onClick={()=> this.addAndDeleteFavourites(this.props.data.id)}>{this.state.favsText}</p> 
+                            </section>           
+                        </div>  
+                                                                     
                         
-                    } 
-                    <div className=''>
-                        <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>    
-                        <section className='favorite-containerMoviesFav'>
-                            <p className='favoriteMoviesFav' onClick={()=> this.addAndDeleteFavourites(this.props.data.id)}>{this.state.favsText}</p> 
-                        </section>           
-                    </div>  
-                                                                 
-                    
-                </article>
-        )
+                    </article>
+            )
+        }
+        
     }
-}
 
 export default MoviesFavs

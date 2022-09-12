@@ -21,16 +21,16 @@ class SearchResultsTVShows extends Component{
     }
 
     componentDidMount() {
-        let favourites = []
-        let recuperoStorage = localStorage.getItem('favourites')
+        let favouriteSeries = []
+        let recuperoStorage = localStorage.getItem('favouriteSeries')
 
         if(recuperoStorage !== null) {
                 
             let storageToArray = JSON.parse(recuperoStorage)
-            favourites = storageToArray
+            favouriteSeries = storageToArray
             
-            console.log(favourites);
-            if(favourites.includes(this.props.data.id)) {
+
+            if(favouriteSeries.includes(this.props.data.id)) {
                 this.setState({
                     favsText: 'Delete from favourites'
                 })
@@ -66,7 +66,7 @@ class SearchResultsTVShows extends Component{
 
 
 
-        let favsToString = JSON.stringify(favourites)
+        let favsToString = JSON.stringify(favouriteSeries)
 
         localStorage.setItem('favouriteSeries', favsToString)
 
