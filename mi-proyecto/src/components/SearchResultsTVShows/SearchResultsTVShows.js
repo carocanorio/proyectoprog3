@@ -39,25 +39,25 @@ class SearchResultsTVShows extends Component{
     }
 
     addAndDeleteFavourites(id) {
-        let favourites = []
-        let recuperoStorage = localStorage.getItem('favourites')
+        let favouriteSeries = []
+        let recuperoStorage = localStorage.getItem('favouriteSeries')
 
         if(recuperoStorage !== null) {
 
             let storageToArray = JSON.parse(recuperoStorage)
 
-            favourites = storageToArray
+            favouriteSeries = storageToArray
 
         }
 
-        if(favourites.includes(id)) {
-            favourites = favourites.filter(eachID => eachID !== id)
+        if(favouriteSeries.includes(id)) {
+            favouriteSeries = favouriteSeries.filter(eachID => eachID !== id)
             this.setState({
                 favsText: 'Add to favourites',
                 id: id
             })
         } else {
-            favourites.push(id)
+            favouriteSeries.push(id)
             this.setState({
                 favsText: 'Delete from favourites',
                 id: id
@@ -68,7 +68,7 @@ class SearchResultsTVShows extends Component{
 
         let favsToString = JSON.stringify(favourites)
 
-        localStorage.setItem('favourites', favsToString)
+        localStorage.setItem('favouriteSeries', favsToString)
 
         console.log(localStorage);
     }
