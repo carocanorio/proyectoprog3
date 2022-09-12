@@ -7,7 +7,10 @@ class AllMoviesCards extends Component{
     constructor(props){
         super(props);
         this.state = {
-            viewMore: false
+            viewMore: false,
+            favsText: 'Add to favourites',
+            inFavs: false,
+            id: this.props.data.id
         }
     };
     show(){
@@ -15,6 +18,59 @@ class AllMoviesCards extends Component{
     }
     hide(){
         this.setState({viewMore: false} )
+    }
+    
+    omponentDidMount() {
+        let favourites = []
+        let recuperoStorage = localStorage.getItem('favourites')
+
+        if(recuperoStorage !== null) {
+                
+            let storageToArray = JSON.parse(recuperoStorage)
+            favourites = storageToArray
+            
+            console.log(favourites);
+            if(favourites.includes(this.props.data.id)) {
+                this.setState({
+                    favsText: 'Delete from favourites'
+                })
+            }
+        }
+    }
+
+    addAndDeleteFavourites(id) {
+        let favourites = []
+        let recuperoStorage = localStorage.getItem('favourites')
+
+        if(recuperoStorage !== null) {
+
+            let storageToArray = JSON.parse(recuperoStorage)
+
+            favourites = storageToArray
+
+        }
+
+        if(favourites.includes(id)) {
+            favourites = favourites.filter(eachID => eachID !== id)
+            this.setState({
+                favsText: 'Add to favourites',
+                id: this.props.data.id
+            })
+        } else {
+            favourites.push(id)
+            this.setState({
+                favsText: 'Delete from favourites',
+                id: this.props.data.id
+            })
+        }
+
+
+
+        let favsToString = JSON.stringify(favourites)
+
+        localStorage.setItem('favourites', favsToString)
+
+        console.log(localStorage);
     }
 
     render(){
@@ -39,7 +95,9 @@ class AllMoviesCards extends Component{
                     } 
                     <div className='go-to-detail-containerAllMoviesCard'>
                         <Link className='go-to-detailAllMoviesCard' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>                    
-                        <p className='favouritesAllMoviesCard'><span className="material-symbols-outlined">heart_plus </span></p>  
+                        <section className='favouritesAllMoviesCard'>
+                            <p className='addFavouriteAllMoviesCard' onClick={()=> this.addAndDeleteFavourites(this.props.data.id)}>{this.state.favsText}</p> 
+                        </section>      
                     </div>                                              
                     
                 </article>

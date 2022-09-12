@@ -17,37 +17,18 @@
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .card-container p {
-    margin: 6px;
+    margin: 20px;
+    color: white;
+    text-align: center;
 }
 .card-container h3 {
     margin: 10px;
 }
 .more{
-    color: rgb(2, 2, 138);
     text-align: right;
     font-weight: bold;
     margin: 5px;
 }
-.card-container div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.go-to-detail {
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    border-radius: 25px;
-    border-color: 0px;
-    padding: 5px;
-    background-color: rgba(240, 255, 255, 0.767);
-    text-align: center;
-    color: black;
-    font-weight: bold;
-
-}
-
 .go-to-detail:hover,
 .active{
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
