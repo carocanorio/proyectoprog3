@@ -12,10 +12,7 @@
     max-width: 100%;   
     border-radius: 5px;
 }
-.favouritesCard:hover,
-.active{
-box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
-}
+
 .favouritesCard p {
     margin: 6px;
 }

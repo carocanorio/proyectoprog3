@@ -28,14 +28,14 @@ class SeriesFavs extends Component{
                     {this.state.viewMore ? 
                         <section className='extraFavSeries'>                            
                             <p>Overview: {this.props.data.overview}</p> 
-                            <p className='moreFavSeries' onClick={() => this.hide()}>View less</p>
+                            <p className='moreInfoSeries' onClick={() => this.hide()}>View less</p>
                         </section>
                         :                                                 
-                        <p className='moreFavSeriess' onClick={() => this.show()}>View more</p>                         
+                        <p className='moreInfoSeries' onClick={() => this.show()}>View more</p>                         
                         
                     } 
                     <div>
-                        <Link className='go-to-detailFavSeries' to={`/shows/id/${this.props.data.id}`}>Go to detail</Link>                    
+                        <Link className='go-to-detail-FavSeries' to={`/shows/id/${this.props.data.id}`}>Go to detail</Link>                    
                         <p className='favouritesFavSeries'><span className="material-symbols-outlined">heart_plus </span></p>  
                     </div>
                                                                  

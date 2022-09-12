@@ -39,7 +39,7 @@ class FavouriteSeries extends Component{
             return(
                 <div>
                     <h2 className='h3FavouriteSeries'>Favourite Series</h2>
-                    <section className='favouritesContaineSeries'>
+                    <section className='favouritesContainerSeries'>
                         {this.state.showSeries.map((data, id) => <SeriesFavs key={data + '_' + id} data={data} />)}
                     </section>
                 </div>

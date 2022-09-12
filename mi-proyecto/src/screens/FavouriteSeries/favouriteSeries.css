@@ -1,0 +1,27 @@
+.favouritesContainerSeries {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;    
+    border-radius: 5px;
+    width: 100%;
+}
+
+.h3FavouriteSeries {
+ text-align: center;
+}
+
+@media (max-width: 768px){
+.favouritesContainerSeries {
+    flex-direction: row;         
+    justify-content: space-around;
+}
+}
+
+
+@media (max-width: 420px){ 
+.favouritesContainerSeries {
+    flex-direction: column; 
+    align-items: center;   
+}
+}
