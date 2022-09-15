@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import './AllSeries.css';
 import loadingGif from '../../loadingGif.gif'
 import MorePopular from "../../components/MorePopular/MorePopular";
+import FormAll from "../../components/FormAll/FormAll";
 
 class AllSeries extends Component {
 
@@ -41,6 +42,14 @@ class AllSeries extends Component {
         .catch(error => console.log(error));
     }
 
+    filtrarSerie(name) {
+        let arrayFiltrado = this.state.data.filter(serie => serie.name.toLowerCase().includes(name.toLowerCase()))
+
+        this.setState({
+            data: arrayFiltrado
+        })
+    }
+
     render() {
         return(
 
@@ -56,6 +65,10 @@ class AllSeries extends Component {
             <div>
             
             <div className="allSeriesH1"> <h1>All Series</h1> </div>
+
+            <div className="formAllSeries">
+                <FormAll filtro={(nombre) => this.filtrarSerie(nombre)} />
+            </div>
 
             <section className='allSeriesContainer'>
             

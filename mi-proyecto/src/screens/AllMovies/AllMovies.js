@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import './AllMovies.css';
 import loadingGif from '../../loadingGif.gif'
 import Billboard from "../../components/Billboard/Billboard";
+import FormAll from "../../components/FormAll/FormAll";
 
 class AllMovies extends Component {
 
@@ -41,6 +42,14 @@ class AllMovies extends Component {
         .catch(error => console.log(error));
     }
 
+    filtrarMovie(name) {
+        let arrayFiltrado = this.state.data.filter(movie => movie.title.toLowerCase().includes(name.toLowerCase()))
+
+        this.setState({
+            data: arrayFiltrado
+        })
+    }
+
     render() {
         return(
 
@@ -56,6 +65,10 @@ class AllMovies extends Component {
             <div>
             
             <div className="allMoviesH1"> <h1>All Movies</h1> </div>
+
+            <div className="formAllMovies">
+                <FormAll filtro={(nombre) => this.filtrarMovie(nombre)} />
+            </div>
 
             <section className='allMoviesContainer'>
             

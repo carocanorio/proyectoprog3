@@ -28,6 +28,16 @@
     justify-content: center;
 }
 
+.formAllMovies {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+div.go-to-detail-container {
+   
+}
+
 @media (max-width: 768px){
     
    .allMoviesContainer {       
