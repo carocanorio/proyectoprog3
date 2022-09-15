@@ -98,7 +98,7 @@ class Billboard extends Component{
                         <Link className='go-to-detail' to={`/movies/id/${this.props.data.id}`}>Go to detail</Link>    
                         <section className='favorite-container'>
                             <p className='favorite' onClick={()=> this.addAndDeleteFavourites(this.props.data.id)}>{this.state.favsText}</p> 
-                        </section>           
+                        </section>
                     </div>  
                                                                      
                     

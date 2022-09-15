@@ -24,12 +24,10 @@ class FavouriteMovies extends Component{
                     .then( response => response.json())
                     .then( data => { 
                          movies.push(data);
-                         console.log(this.state.showMovies.length);
-                         // aca hago el setState
                          this.setState({
                              showMovies: movies
                          });
-                    }) // pusheo la data
+                    }) 
                     return true; 
                 });
         
