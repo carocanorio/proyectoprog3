@@ -10,7 +10,9 @@ function Footer (){
                 , 
                 <a href="https://www.linkedin.com/in/inaki-valencia/ " className='footerNames'> Iñaki Valencia </a>
                 and 
-                <a href="https://www.linkedin.com/in/quill%C3%A9n-bucciero-78ba56207/" className='footerNames'> Quillén Bucciero </a>
+                <a href="https://www.linkedin.com/in/quill%C3%A9n-bucciero-78ba56207/" className='footerNames'> Quillén Bucciero. </a>
+
+                Contact us by linkedin!
             </p>   
             <p>Copyright © 2022</p>
         </footer>
