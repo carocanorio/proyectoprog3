@@ -7,7 +7,7 @@ class ShowDetail extends Component{
     constructor(props){
         super();
         this.state = {
-            id: Number(props.match.params.id),
+            id: props.match.params.id,
             showInformation: {
                 genres: []
             },
