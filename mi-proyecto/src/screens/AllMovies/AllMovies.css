@@ -34,14 +34,15 @@
     margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ccf6d20bd2a89b34e726eeb26b6f2fd5770610f5
 @media (max-width: 768px){
-    
    .allMoviesContainer {       
         flex-direction: row;         
         justify-content: space-around;
     }    
-
 }
 
 @media (max-width: 420px){ 
@@ -50,5 +51,4 @@
         flex-direction: column; 
         align-items: center;        
     }
-
 }

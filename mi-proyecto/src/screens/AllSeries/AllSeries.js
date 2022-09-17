@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import AllSeriesCards from "../../components/AllSeriesCards/AllSeriesCards";
-import './AllSeries.css';
+import './allSeries.css';
 import loadingGif from '../../loadingGif.gif'
 import MorePopular from "../../components/MorePopular/MorePopular";
 import FormAll from "../../components/FormAll/FormAll";

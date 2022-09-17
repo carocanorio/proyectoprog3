@@ -1,8 +1,8 @@
 import React from "react";
 
 //Own components//
-import MovieDetail from './components/MovieDetail/MovieDetail';
-import ShowDetail from './components/ShowDetail/ShowDetail';
+import MovieDetail from './screens/MovieDetail/MovieDetail';
+import ShowDetail from './screens/ShowDetail/ShowDetail';
 import Header from './components/Header/Header'
 import Home from './screens/Home/Home'
 import NotFound from "./screens/NotFound/NotFound";

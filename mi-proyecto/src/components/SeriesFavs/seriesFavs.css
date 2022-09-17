@@ -24,12 +24,6 @@
     color: white;
     text-align: center;
 }
-.favouriteSeriesContainer div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-}
 a.go-to-detail-FavSeries {
     background-color: rgb(44, 43, 43);
     color: white;
