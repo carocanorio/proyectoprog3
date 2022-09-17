@@ -41,11 +41,9 @@ class Home extends Component {
                     dataBillboard : resultBillboard,
                     dataPopular: resultPopular
                 }))
-                .catch()
+                .catch(e=>console.log(e))
             })
-            .catch()
-
-
+            .catch(e=>console.log(e))
     }   
 
     // BUSCADOR
