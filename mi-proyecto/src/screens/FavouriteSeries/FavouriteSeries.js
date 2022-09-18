@@ -47,9 +47,15 @@ class FavouriteSeries extends Component{
                 return(
                     <div>
                         <h2 className='h3FavouriteSeries'>Favourite Series</h2>
-                        <section className='favouritesContainerSeries'>
-                            {this.state.showSeries.map((data, id) => <SeriesFavs key={data + '_' + id} data={data} eliminar={(id) => this.eliminarDefavs(id)}/>)}
-                        </section>
+
+                        {
+                            this.state.showSeries.length === 0 ?
+                            <p className="emptyFavs">See all your favourite TV shows</p>
+                            :
+                            <section className='favouritesContainerSeries'>
+                                {this.state.showSeries.map((data, id) => <SeriesFavs key={data + '_' + id} data={data} eliminar={(id) => this.eliminarDefavs(id)}/>)}
+                            </section>
+                        }
                     </div>
                 )
 

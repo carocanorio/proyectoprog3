@@ -13,6 +13,7 @@ class AllSeries extends Component {
         this.state = {
             fetching: true,
             data: [],
+            dataFilter: [],
             nextPage: ''
         }
     }
@@ -24,6 +25,7 @@ class AllSeries extends Component {
         .then(response => response.json())
         .then(data => this.setState({
             data: data.results,
+            dataFilter: data.results,
             nextPage: data.page + 1,
             fetching: false
         }))
@@ -43,7 +45,7 @@ class AllSeries extends Component {
     }
 
     filtrarSerie(name) {
-        let arrayFiltrado = this.state.data.filter(serie => serie.name.toLowerCase().includes(name.toLowerCase()))
+        let arrayFiltrado = this.state.dataFilter.filter(serie => serie.name.toLowerCase().includes(name.toLowerCase()))
 
         this.setState({
             data: arrayFiltrado
@@ -62,24 +64,24 @@ class AllSeries extends Component {
 
             <React.Fragment>
 
-            <div>
-            
-            <div className="allSeriesH1"> <h1>All Series</h1> </div>
+                <div>
+                
+                    <div className="allSeriesH1"> <h1>All Series</h1> </div>
 
-            <div className="formAllSeries">
-                <FormAll filtro={(nombre) => this.filtrarSerie(nombre)} />
-            </div>
+                    <div className="formAllSeries">
+                        <FormAll filtro={(nombre) => this.filtrarSerie(nombre)} />
+                    </div>
 
-            <section className='allSeriesContainer'>
-            
-            {this.state.data.map((data, id) => <MorePopular data={data} key={data + '_' + id}/>)}
+                    <section className='allSeriesContainer'>
+                    
+                    {this.state.data.map((data, id) => <MorePopular data={data} key={data + '_' + id}/>)}
 
-            
-            </section> 
+                    
+                    </section> 
 
-            <div className="buttonVerMasAllSeries-container"> <button onClick={() => this.showMoreSeries()} className="buttonVerMasAllSeries"> View more </button> </div>
+                    <div className="buttonVerMasAllSeries-container"> <button onClick={() => this.showMoreSeries()} className="buttonVerMasAllSeries"> View more </button> </div>
 
-            </div>
+                </div>
             </React.Fragment>
 
             

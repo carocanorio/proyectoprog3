@@ -13,6 +13,7 @@ class AllMovies extends Component {
         this.state = {
             fetching: true,
             data: [],
+            dataFilter: [],
             nextPage: ''
         }
     }
@@ -24,6 +25,7 @@ class AllMovies extends Component {
         .then(response => response.json())
         .then(data => this.setState({
             data: data.results,
+            dataFilter: data.results,
             nextPage: data.page + 1,
             fetching: false
         }))
@@ -43,7 +45,7 @@ class AllMovies extends Component {
     }
 
     filtrarMovie(name) {
-        let arrayFiltrado = this.state.data.filter(movie => movie.title.toLowerCase().includes(name.toLowerCase()))
+        let arrayFiltrado = this.state.dataFilter.filter(movie => movie.title.toLowerCase().includes(name.toLowerCase()))
 
         this.setState({
             data: arrayFiltrado
